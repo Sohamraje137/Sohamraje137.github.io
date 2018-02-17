@@ -1,0 +1,89 @@
+<!DOCTYPE>
+<html>
+  <head>
+  	<script type="text/javascript">
+  		function buttonClick(){
+  			x=document.getElementById("i0").value;
+
+   			y=document.getElementById("i1").value;
+  			z=document.getElementById("i2").value;
+  			w=document.getElementById("i3").value;
+  			
+
+  			// document.getElementById("g").innerHTML=x+y+z+w;          
+
+  		}
+  		function keytest(){
+  			var tes=/^(?=.*[0-1])$/;
+  			x=document.getElementById("i0").value;
+  			if(!tes.test(x))
+  				alert("Enter valid keyword");
+  		}
+
+
+  	</script>
+
+  <!--   CSS -->
+   	<style>
+ul { margin: 0;
+     padding: 0;
+    list-style-type: none;
+	overflow: hidden;
+    background-color: #333;
+  }
+
+li {
+    float: left;
+}
+
+li a {
+    display: flex;
+    color: white;
+    text-align: center;
+    padding: 14px 16px 14px 16px;
+    text-decoration: none;
+    
+}
+
+li a:hover {
+    background-color: #111;
+}
+ li a:active {
+   color:black;
+    background-color: grey; 
+   }
+
+</style>
+</head>
+
+<!-- Body -->
+<body>
+  </style>
+  </head>
+  <body>
+  	<div>
+  	<ul>
+  		<li><a  href="t.html">Description</a></li>
+      <li><a  href="">Polynomial</a></li>
+      <li><a  href="">About US</a></li>
+  	</ul>
+  </div>
+  <div>
+  	<br>
+  </div>
+    <h1 align="center">Cyclic Redundancy Check</h1>
+    
+    <form>
+    	Binary coefficients: <input type="number" name="Binary" id="i0" onkeydown="keytest()"> &nbsp;  &nbsp;  &nbsp;
+    	Divisor:<input type="number" name="divisor" id="i1">
+    	<br><br><br>
+    	polynomial :&nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;   &nbsp; <input type="number" name="polynomial" id="i2"> &nbsp;  &nbsp;  &nbsp;
+    	Divisor: <input type="number" name="divisor" id="i3">
+    	<br><br><br><input type="button" value="submit" onclick="buttonClick()">
+     <br><br>
+     <br>
+     <p id="g"></p>
+    </form>
+
+  	</body>
+</html>
