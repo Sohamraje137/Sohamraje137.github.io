@@ -3,23 +3,246 @@
   <head>
   	<script type="text/javascript">
   		function buttonClick(){
+  			
+
+
   			x=document.getElementById("i0").value;
 
    			y=document.getElementById("i1").value;
   			z=document.getElementById("i2").value;
   			w=document.getElementById("i3").value;
   			
+  			
+  			var a = new Array(x.length); var a1 = new Array(x.length);
+            var p = new Array(y.length);
+            var b= new Array(z.length);   var b1= new Array(z.length);
+            var q= new Array(w.length);
+  			// document.getElementById("g").innerHTML=x+y+z+w;        
+  			var i;
+  			var l,m,n,o;
+  			var l = parseInt(x)
+  			var m = parseInt(y)
+  			var n = parseInt(z)
+            var o = parseInt(w)    
+            var l1=x.length
+            var l2=y.length
+            var l3=z.length
+            var l4=w.length
+               for(i=l1-1;i>=0;i--)
+                {
+                  a[i]=parseInt(l%10);	
+                  a1[i]=a[i];
+                  l=l/10;
+                }
+                  for(i=l2-1;i>=0;i--)
+                {
+                  p[i]=parseInt(m%10);	
+                  m=m/10;
+                }
+                  for(i=l3-1;i>=0;i--)
+                {
+                  b[i]=parseInt(n%10);	
+                  b1[i]=b[i];
+                  n=n/10;
+                }
+                  for(i=l4-1;i>=0;i--)
+                {
+                  q[i]=parseInt(o%10);	
+                  o=o/10;
+                }
+            var j;
 
-  			// document.getElementById("g").innerHTML=x+y+z+w;          
 
-  		}
+
+
+
+       //    if(!(empty1 == "") || !(empty2 == ""))
+       // {
+          for(i=0;i<l1;i++)
+          {
+          	if(a[i]==1)
+          	{
+          		for(j=0;j<l2;j++)
+          		{
+          			a[i+j]=a[i+j]^p[j];
+          			//t+="a[i+j]"+i
+          		}
+          	}
+          	else
+          	{
+          		for(j=0;j<l2;j++)
+          		{
+          			a[i+j]=a[i+j]^0;
+          			//t+="a[i+j]"
+          		}
+          	}
+          }
+		        for(i=l1;i<a.length;i++)
+		        {
+		            a1[i]=a[i];
+		        }
+                      document.getElementById("g").innerHTML=a1//+"<br>"+p+"<br>"+b+"<br>"+q;
+
+      //  }
+
+
+
+
+       // else{  
+          for(i=0;i<l3;i++)
+	        {
+	          	if(b[i]==1)
+	          	{
+	          		for(j=0;j<l4;j++)
+	          		{
+	          			b[i+j]=b[i+j]^q[j];
+	          			//t+="a[i+j]"+i
+	          		}
+	          	}
+		          	else
+		          	{
+		          		for(j=0;j<l4;j++)
+		          		{
+		          			b[i+j]=b[i+j]^0;
+		          			//t+="a[i+j]"
+		          		}
+		          	}
+		          }
+				        for(i=l4;i<b.length;i++)
+		        {
+		            b1[i]=b[i];
+		        }
+		   
+		       
+
+		       document.getElementById("h").innerHTML=b1//+"<br>"+p+"<br>"+b+"<br>"+q;
+
+		         //document.getElementById("h").innerHTML=t//+"<br>"+p+"<br>"+b+"<br>"+q;
+
+        }
+  	//	}
   		function keytest(){
   			var tes=/^(?=.*[0-1])$/;
   			x=document.getElementById("i0").value;
-  			if(!tes.test(x))
-  				alert("Enter valid keyword");
+  			// if(!tes.test(x))
+  			// 	alert("Enter valid keyword");
   		}
 
+        
+          
+
+     function buttonClick2(){
+  			x=document.getElementById("i10").value;
+   			y=document.getElementById("i11").value;
+  			z=document.getElementById("i12").value;
+  			w=document.getElementById("i13").value;
+  			
+  			
+  			var a = new Array(x.length); var a1 = new Array(x.length);
+            var p = new Array(y.length);
+            var b= new Array(z.length);   var b1= new Array(z.length);
+            var q= new Array(w.length);
+  			// document.getElementById("g").innerHTML=x+y+z+w;        
+  			var i;
+  			var a7 = new Array(x.length-y.length+1);
+  			var b7 = new Array(z.length-w.length+1);
+
+  			var l,m,n,o;
+  			var l = parseInt(x)
+  			var m = parseInt(y)
+  			var n = parseInt(z)
+            var o = parseInt(w)    
+            var l1=x.length
+            var l2=y.length
+            var l3=z.length
+            var l4=w.length
+           
+                for(i=l1-1;i>=0;i--)
+                {
+                  a[i]=parseInt(l%10);	
+                  a1[i]=a[i];
+                  l=l/10;
+                }
+                  for(i=l2-1;i>=0;i--)
+                {
+                  p[i]=parseInt(m%10);	
+                  m=m/10;
+                }
+                  for(i=l3-1;i>=0;i--)
+                {
+                  b[i]=parseInt(n%10);	
+                  b1[i]=b[i];
+                  n=n/10;
+                }
+                  for(i=l4-1;i>=0;i--)
+                {
+                  q[i]=parseInt(o%10);	
+                  o=o/10;
+                }
+            var j;
+            
+          for(i=0;i<l1-l2+1;i++)
+          {
+          	if(a[i]==1)
+          	{
+          		for(j=0;j<l2;j++)
+          		{
+          			a[i+j]=a[i+j]^p[j];
+          			//t+="a[i+j]"+i
+          		}
+          	}
+          	else
+          	{
+          		for(j=0;j<l2;j++)
+          		{
+          			a[i+j]=a[i+j]^0;
+          			//t+="a[i+j]"
+          		}
+          	}
+          }
+
+        for(i=0;i<l1-l2+1;i++)
+        {
+            a7[i]=a1[i];
+        }
+
+
+
+
+               document.getElementById("k").innerHTML=a7//+"<br>"+p+"<br>"+b+"<br>"+q;
+
+   
+        for(i=0;i<l3-l4+1;i++)
+          {
+          	if(b[i]==1)
+          	{
+          		for(j=0;j<l4;j++)
+          		{
+          			b[i+j]=b[i+j]^q[j];
+          			//t+="a[i+j]"+i
+          		}
+          	}
+          	else
+          	{
+          		for(j=0;j<l4;j++)
+          		{
+          			b[i+j]=b[i+j]^0;
+          			//t+="a[i+j]"
+          		}
+          	}
+          }
+
+        for(i=0;i<l3-l4+1;i++)
+        {
+            b7[i]=b1[i];
+        }
+   
+
+       document.getElementById("l").innerHTML=b7//+"<br>"+p+"<br>"+b+"<br>"+q;
+         //document.getElementById("h").innerHTML=t//+"<br>"+p+"<br>"+b+"<br>"+q;
+
+
+  		}
 
   	</script>
 
@@ -64,26 +287,61 @@ li a:hover {
   	<div>
   	<ul>
   		<li><a  href="t.html">Description</a></li>
-      <li><a  href="">Polynomial</a></li>
+      <li><a  href="t1.html">Polynomial</a></li>
       <li><a  href="">About US</a></li>
   	</ul>
   </div>
-  <div>
+
+
+  <div style="clear:both"></div>
+   <div>
   	<br>
   </div>
     <h1 align="center">Cyclic Redundancy Check</h1>
-    
-    <form>
+
+
+
+
+
+    <div style="float:left; width: 50%">
+    <h2 align="center">Generator</h2>
+    <form name="form1">
     	Binary coefficients: <input type="number" name="Binary" id="i0" onkeydown="keytest()"> &nbsp;  &nbsp;  &nbsp;
     	Divisor:<input type="number" name="divisor" id="i1">
     	<br><br><br>
     	polynomial :&nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;   &nbsp; <input type="number" name="polynomial" id="i2"> &nbsp;  &nbsp;  &nbsp;
-    	Divisor: <input type="number" name="divisor" id="i3">
+    	Divisor: <input type="number" name="divisor2" id="i3">
     	<br><br><br><input type="button" value="submit" onclick="buttonClick()">
      <br><br>
      <br>
      <p id="g"></p>
+     <p id="h"></p>
     </form>
+   </div>
+
+
+
+
+    <div style="float:right; width: 50%">
+     <h2 align="center">Checker</h2>
+    <form>
+      Binary coefficients: <input type="number" name="Binary" id="i10" onkeydown="keytest()"> &nbsp;  &nbsp;  &nbsp;
+      Divisor:<input type="number" name="divisor" id="i11">
+      <br><br><br>
+      polynomial :&nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;   &nbsp; <input type="number" name="polynomial" id="i12"> &nbsp;  &nbsp;  &nbsp;
+      Divisor: <input type="number" name="divisor2" id="i13">
+      <br><br><br><input type="button" value="submit" onclick="buttonClick2()">
+     <br><br>
+     <br>
+     <p id="k"></p>
+          <p id="l"></p>
+
+    </form>
+   </div>
+   
+
+
+
 
   	</body>
 </html>

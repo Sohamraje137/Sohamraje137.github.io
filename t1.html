@@ -1,0 +1,53 @@
+<html>
+<body>
+
+<h1>Designing polynomials
+</h1>
+<p>
+	<font size="4">
+The selection of the generator polynomial is the most important part of implementing the CRC algorithm. The polynomial must be chosen to maximize the error-detecting capabilities while minimizing overall collision probabilities.
+
+The most important attribute of the polynomial is its length (largest degree(exponent) +1 of any one term in the polynomial), because of its direct influence on the length of the computed check value.
+
+The most commonly used polynomial lengths are:
+
+    9 bits (CRC-8)
+    17 bits (CRC-16)
+    33 bits (CRC-32)
+    65 bits (CRC-64)
+
+A CRC is called an n-bit CRC when its check value is n-bits. For a given n, multiple CRCs are possible, each with a different polynomial. Such a polynomial has highest degree n, and hence n + 1 terms (the polynomial has a length of n + 1). The remainder has length n. The CRC has a name of the form CRC-n-XXX.
+
+The design of the CRC polynomial depends on the maximum total length of the block to be protected (data + CRC bits), the desired error protection features, and the type of resources for implementing the CRC, as well as the desired performance. A common misconception is that the "best" CRC polynomials are derived from either irreducible polynomials or irreducible polynomials times the factor 1 + x, which adds to the code the ability to detect all errors affecting an odd number of bits.[7] In reality, all the factors described above should enter into the selection of the polynomial and may lead to a reducible polynomial. However, choosing a reducible polynomial will result in a certain proportion of missed errors, due to the quotient ring having zero divisors.
+
+The advantage of choosing a primitive polynomial as the generator for a CRC code is that the resulting code has maximal total block length in the sense that all 1-bit errors within that block length have different remainders (also called syndromes) and therefore, since the remainder is a linear function of the block, the code can detect all 2-bit errors within that block length. If r {\displaystyle r} r is the degree of the primitive generator polynomial, then the maximal total block length is 2 r − 1 {\displaystyle 2^{r}-1} 2^{r}-1, and the associated code is able to detect any single-bit or double-bit errors.[8] We can improve this situation. If we use the generator polynomial g ( x ) = p ( x ) ( 1 + x ) {\displaystyle g(x)=p(x)(1+x)} g(x)=p(x)(1+x), where p ( x ) {\displaystyle p(x)} p(x) is a primitive polynomial of degree r − 1 {\displaystyle r-1} r-1, then the maximal total block length is 2 r − 1 − 1 {\displaystyle 2^{r-1}-1} 2^{r-1}-1, and the code is able to detect single, double, triple and any odd number of errors.
+
+A polynomial g ( x ) {\displaystyle g(x)} g(x) that admits other factorizations may be chosen then so as to balance the maximal total blocklength with a desired error detection power. The BCH codes are a powerful class of such polynomials. They subsume the two examples above. Regardless of the reducibility properties of a generator polynomial of degree r, if it includes the "+1" term, the code will be able to detect error patterns that are confined to a window of r contiguous bits. These patterns are called "error bursts".
+</font>
+</p>
+<h1>Specification</h1>
+<p>  	<font size="4">
+
+The concept of the CRC as an error-detecting code gets complicated when an implementer or standards committee uses it to design a practical system. Here are some of the complications:
+
+    Sometimes an implementation prefixes a fixed bit pattern to the bitstream to be checked. This is useful when clocking errors might insert 0-bits in front of a message, an alteration that would otherwise leave the check value unchanged.
+    Usually, but not always, an implementation appends n 0-bits (n being the size of the CRC) to the bitstream to be checked before the polynomial division occurs. Such appending is explicitly demonstrated in the Computation of CRC article. This has the convenience that the remainder of the original bitstream with the check value appended is exactly zero, so the CRC can be checked simply by performing the polynomial division on the received bitstream and comparing the remainder with zero. Due to the associative and commutative properties of the exclusive-or operation, practical table driven implementations can obtain a result numerically equivalent to zero-appending without explicitly appending any zeroes, by using an equivalent,[7] faster algorithm that combines the message bitstream with the stream being shifted out of the CRC register.
+    Sometimes an implementation exclusive-ORs a fixed bit pattern into the remainder of the polynomial division.
+    Bit order: Some schemes view the low-order bit of each byte as "first", which then during polynomial division means "leftmost", which is contrary to our customary understanding of "low-order". This convention makes sense when serial-port transmissions are CRC-checked in hardware, because some widespread serial-port transmission conventions transmit bytes least-significant bit first.
+    Byte order: With multi-byte CRCs, there can be confusion over whether the byte transmitted first (or stored in the lowest-addressed byte of memory) is the least-significant byte (LSB) or the most-significant byte (MSB). For example, some 16-bit CRC schemes swap the bytes of the check value.
+    Omission of the high-order bit of the divisor polynomial: Since the high-order bit is always 1, and since an n-bit CRC must be defined by an (n + 1)-bit divisor which overflows an n-bit register, some writers assume that it is unnecessary to mention the divisor's high-order bit.
+    Omission of the low-order bit of the divisor polynomial: Since the low-order bit is always 1, authors such as Philip Koopman represent polynomials with their high-order bit intact, but without the low-order bit (the x 0 {\displaystyle x^{0}} x^{0} or 1 term). This convention encodes the polynomial complete with its degree in one integer.
+
+These complications mean that there are three common ways to express a polynomial as an integer: the first two, which are mirror images in binary, are the constants found in code; the third is the number found in Koopman's papers. In each case, one term is omitted. So the polynomial x 4 + x + 1 {\displaystyle x^{4}+x+1} x^{4}+x+1 may be transcribed as:
+
+    0x3 = 0b0011, representing x 4 + ( 0 x 3 + 0 x 2 + 1 x 1 + 1 x 0 ) {\displaystyle x^{4}+(0x^{3}+0x^{2}+1x^{1}+1x^{0})} {\displaystyle x^{4}+(0x^{3}+0x^{2}+1x^{1}+1x^{0})} (MSB-first code)
+    0xC = 0b1100, representing ( 1 x 0 + 1 x 1 + 0 x 2 + 0 x 3 ) + x 4 {\displaystyle (1x^{0}+1x^{1}+0x^{2}+0x^{3})+x^{4}} {\displaystyle (1x^{0}+1x^{1}+0x^{2}+0x^{3})+x^{4}} (LSB-first code)
+    0x9 = 0b1001, representing ( 1 x 4 + 0 x 3 + 0 x 2 + 1 x 1 ) + x 0 {\displaystyle (1x^{4}+0x^{3}+0x^{2}+1x^{1})+x^{0}} {\displaystyle (1x^{4}+0x^{3}+0x^{2}+1x^{1})+x^{0}} (Koopman notation) </p>
+
+</font>
+<p > <a style="background-color: white" href="https://en.wikipedia.org/wiki/Mathematics_of_cyclic_redundancy_checks#Polynomial_representations"><font size="5">read more</font></a
+	</p>
+	<p > <a style="background-color: white" href="https://users.ece.cmu.edu/~koopman/crc/"><font size="5">advanced polynomial choices</font></a
+	</p>
+</body>
+</html>
