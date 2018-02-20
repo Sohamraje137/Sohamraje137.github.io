@@ -28,6 +28,9 @@
             var l2=y.length
             var l3=z.length
             var l4=w.length
+                  
+                  var t;
+
                for(i=l1-1;i>=0;i--)
                 {
                   a[i]=parseInt(l%10);	
@@ -77,26 +80,98 @@
 
 
 
-
+         var string2;
 
        //    if(!(empty1 == "") || !(empty2 == ""))
        // {
+        var string="";
+        for(t=l1;t<l1+l2-1;t++)
+        {
+          a[t]=0;
+        }
+
+         for(t=l3;t<l3+l4-1;t++)
+        {
+          b[t]=0;
+        }
+
+
+ string="The Execution Steps are as follows:"
+
           for(i=0;i<l1;i++)
           {
+                      string+=" "+"<br>"
+                                  for( t=0;t<i;t++)
+                                   {
+                                    string+="\xa0\xa0";
+                                   }
+                                  for( t=i;t<l1+l2-1;t++)
+                                   {
+                                    string+=""+a[t];
+                                   }
+                                   string+="<br>";
+                                   
+                                  for( t=0;t<i;t++)
+                                   {
+                                    string+="\xa0\xa0";
+                                   }
+
+                                   
           	if(a[i]==1)
           	{
+
+                                   for( t=0;t<l2;t++)
+                                   {
+                                    string+=""+p[t];
+                                   }
+                                    string+="<br>";
+                                   
+                                  for( t=0;t<i;t++)
+                                   {
+                                    string+="\xa0\xa0";
+                                   }
+                                  for( t=0;t<l2;t++)
+                                   {
+                                    string+="--";
+                                   }
+                                   string+="<br>";
+                                   for( t=0;t<i;t++)
+                                   {
+                                    string+="\xa0\xa0";
+                                   }
           		for(j=0;j<l2;j++)
           		{
           			a[i+j]=a[i+j]^p[j];
           			//t+="a[i+j]"+i
+                 string+=""+a[i+j];
           		}
           	}
-          	else
-          	{
+          	else{
+          	                     for( t=0;t<l2;t++)
+                                   {
+                                    string+=""+"0";
+                                   }
+                                    string+="<br>";
+                                   
+                                  for( t=0;t<i;t++)
+                                   {
+                                    string+="\xa0\xa0";
+                                   }
+                                  for( t=0;t<l2;t++)
+                                   {
+                                    string+="--";
+                                   }
+                                   string+="<br>";
+                                   for( t=0;t<i;t++)
+                                   {
+                                    string+="\xa0\xa0";
+                                   }
           		for(j=0;j<l2;j++)
           		{
+
           			a[i+j]=a[i+j]^0;
           			//t+="a[i+j]"
+                  string+=""+a[i+j];
           		}
           	}
           }
@@ -104,30 +179,103 @@
 		        {
 		            a1[i]=a[i];
 		        }
-                      document.getElementById("g").innerHTML=a1//+"<br>"+p+"<br>"+b+"<br>"+q;
+
+      string+="<br> The code word is :";
+            for(i=0;i<a.length;i++)
+            {
+             string+=" "+a1[i];
+            }
+                      document.getElementById("g").innerHTML=string//+"<br>"+p+"<br>"+b+"<br>"+q;
 
       //  }
 
 
 
 
-       // else{  
+
+
+string2="The Execution Steps are as follows:"
+
+
+       //else{  
           for(i=0;i<l3;i++)
 	        {
+
+                                  string2+=" "+"<br>"
+                                  for( t=0;t<i;t++)
+                                   {
+                                    string2+="\xa0\xa0";
+                                   }
+                                  for( t=i;t<l3+l4-1;t++)
+                                   {
+                                    string2+=""+b[t];
+                                   }
+                                   string2+="<br>";
+                                   
+                                  for( t=0;t<i;t++)
+                                   {
+                                    string2+="\xa0\xa0";
+                                   }
+
+
+
+
 	          	if(b[i]==1)
 	          	{
+                                for( t=0;t<l4;t++)
+                                   {
+                                    string2+=""+q[t];
+                                   }
+                                    string2+="<br>";
+                                   
+                                  for( t=0;t<i;t++)
+                                   {
+                                    string2+="\xa0\xa0";
+                                   }
+                                  for( t=0;t<l4;t++)
+                                   {
+                                    string2+="--";
+                                   }
+                                   string2+="<br>";
+                                   for( t=0;t<i;t++)
+                                   {
+                                    string2+="\xa0\xa0";
+                                   }
 	          		for(j=0;j<l4;j++)
 	          		{
 	          			b[i+j]=b[i+j]^q[j];
 	          			//t+="a[i+j]"+i
+                  string2+=""+b[i+j];
 	          		}
 	          	}
 		          	else
 		          	{
+                                    for( t=0;t<l4;t++)
+                                   {
+                                    string2+=""+"0";
+                                   }
+                                    string2+="<br>";
+                                   
+                                  for( t=0;t<i;t++)
+                                   {
+                                    string2+="\xa0\xa0";
+                                   }
+                                  for( t=0;t<l4;t++)
+                                   {
+                                    string2+="--";
+                                   }
+                                   string2+="<br>";
+                                   for( t=0;t<i;t++)
+                                   {
+                                    string2+="\xa0\xa0";
+                                   }
 		          		for(j=0;j<l4;j++)
 		          		{
 		          			b[i+j]=b[i+j]^0;
 		          			//t+="a[i+j]"
+                 string2+=""+b[i+j];
+
+
 		          		}
 		          	}
 		          }
@@ -135,10 +283,15 @@
 		        {
 		            b1[i]=b[i];
 		        }
+            string2+="<br> The code word is :";
+             for(i=0;i<b.length;i++)
+            {
+             string2+=" "+b1[i];
+            }
 		   
 		       
 
-		       document.getElementById("h").innerHTML=b1//+"<br>"+p+"<br>"+b+"<br>"+q;
+		       document.getElementById("h").innerHTML=string2//b1//+"<br>"+p+"<br>"+b+"<br>"+q;
 
 		         //document.getElementById("h").innerHTML=t//+"<br>"+p+"<br>"+b+"<br>"+q;
 
@@ -230,65 +383,227 @@
                    }
                 }
             var j;
-            
+            var string,t,string2;
+              string="The Execution Steps are as follows:"
+
+         
+  
           for(i=0;i<l1-l2+1;i++)
           {
+                          string+=" "+"<br>"
+                                  for( t=0;t<i;t++)
+                                   {
+                                    string+="\xa0\xa0";
+                                   }
+                                  for( t=i;t<l1;t++)
+                                   {
+                                    string+=""+a[t];
+                                   }
+                                   string+="<br>";
+                                   
+                                  for( t=0;t<i;t++)
+                                   {
+                                    string+="\xa0\xa0";
+                                   }
+
+
           	if(a[i]==1)
           	{
+                                   for( t=0;t<l2;t++)
+                                   {
+                                    string+=""+p[t];
+                                   }
+                                    string+="<br>";
+                                   
+                                  for( t=0;t<i;t++)
+                                   {
+                                    string+="\xa0\xa0";
+                                   }
+                                  for( t=0;t<l2;t++)
+                                   {
+                                    string+="--";
+                                   }
+                                   string+="<br>";
+                                   for( t=0;t<i;t++)
+                                   {
+                                    string+="\xa0\xa0";
+                                   }                      
           		for(j=0;j<l2;j++)
           		{
           			a[i+j]=a[i+j]^p[j];
           			//t+="a[i+j]"+i
+                string+=""+a[i+j];
           		}
           	}
           	else
           	{
+                                     for( t=0;t<l2;t++)
+                                   {
+                                    string+=""+"0";
+                                   }
+                                    string+="<br>";
+                                   
+                                  for( t=0;t<i;t++)
+                                   {
+                                    string+="\xa0\xa0";
+                                   }
+                                  for( t=0;t<l2;t++)
+                                   {
+                                    string+="--";
+                                   }
+                                   string+="<br>";
+                                   for( t=0;t<i;t++)
+                                   {
+                                    string+="\xa0\xa0";
+                                   }
+
           		for(j=0;j<l2;j++)
           		{
           			a[i+j]=a[i+j]^0;
           			//t+="a[i+j]"
+                string+=""+a[i+j];
+
           		}
           	}
           }
 
-        for(i=0;i<l1-l2+1;i++)
-        {
-            a7[i]=a1[i];
-        }
+        
+            
+                  var count1=0;
+                for(i=l1-l2+1;i<l2;i++){
+                if(a[i]==0)
+                {
+                  count1=count1+1;
+                }
+              }
+              if(count1==l2-1){
+
+              string+="<br> The data word is :";
+              for(i=0;i<l1-l2+1;i++)
+              {
+              string+=" "+a1[i];
+              }
+      }
+      else
+      {
+                string+="<br> Error in transmission <br>The remainder is :";
+                for(i=l1-l2+1;i<l1;i++){
+                  string+=" "+a[i];
+                }
+
+      }
 
 
+               document.getElementById("k").innerHTML=string//+"<br>"+p+"<br>"+b+"<br>"+q;
+  var string2;
+  string2="The Execution Steps are as follows:"
 
 
-               document.getElementById("k").innerHTML=a7//+"<br>"+p+"<br>"+b+"<br>"+q;
 
    
         for(i=0;i<l3-l4+1;i++)
-          {
+          { 
+                                  string2+=" "+"<br>"
+                                  for( t=0;t<i;t++)
+                                   {
+                                    string2+="\xa0\xa0";
+                                   }
+                                  for( t=i;t<l3;t++)
+                                   {
+                                    string2+=""+b[t];
+                                   }
+                                   string2+="<br>";
+                                   
+                                  for( t=0;t<i;t++)
+                                   {
+                                    string2+="\xa0\xa0";
+                                   }
+
           	if(b[i]==1)
           	{
+                                    for( t=0;t<l4;t++)
+                                   {
+                                    string2+=""+q[t];
+                                   }
+                                    string2+="<br>";
+                                   
+                                  for( t=0;t<i;t++)
+                                   {
+                                    string2+="\xa0\xa0";
+                                   }
+                                  for( t=0;t<l4;t++)
+                                   {
+                                    string2+="--";
+                                   }
+                                   string2+="<br>";
+                                   for( t=0;t<i;t++)
+                                   {
+                                    string2+="\xa0\xa0";
+                                   }
           		for(j=0;j<l4;j++)
           		{
           			b[i+j]=b[i+j]^q[j];
           			//t+="a[i+j]"+i
+                string2+=""+b[i+j];
+
           		}
           	}
           	else
           	{
+                                    for( t=0;t<l4;t++)
+                                   {
+                                    string2+=""+"0";
+                                   }
+                                    string2+="<br>";
+                                   
+                                  for( t=0;t<i;t++)
+                                   {
+                                    string2+="\xa0\xa0";
+                                   }
+                                  for( t=0;t<l4;t++)
+                                   {
+                                    string2+="--";
+                                   }
+                                   string2+="<br>";
+                                   for( t=0;t<i;t++)
+                                   {
+                                    string2+="\xa0\xa0";
+                                   }
           		for(j=0;j<l4;j++)
           		{
           			b[i+j]=b[i+j]^0;
           			//t+="a[i+j]"
+                string2+=""+b[i+j];
+
           		}
           	}
           }
 
-        for(i=0;i<l3-l4+1;i++)
-        {
-            b7[i]=b1[i];
-        }
-   
+          var count=0;
+              for(i=l3-l4+1;i<l3;i++){
+                if(b[i]==0)
+                {
+                  count=count+1;
+                }
+              }
+        if(count==l4-1){
 
-       document.getElementById("l").innerHTML=b7//+"<br>"+p+"<br>"+b+"<br>"+q;
+        string2+="<br> The data word is :";
+             for(i=0;i<l3-l4+1;i++)
+            {
+             string2+=" "+b1[i];
+            }
+      }
+      else
+      {
+                string2+="<br> Error in transmission <br>The remainder is :";
+                for(i=l3-l4+1;i<l3;i++){
+                  string2+=" "+b[i];
+                }
+
+      }
+
+       document.getElementById("l").innerHTML=string2//b7//+"<br>"+p+"<br>"+q;
          //document.getElementById("h").innerHTML=t//+"<br>"+p+"<br>"+b+"<br>"+q;
 
 
