@@ -15,14 +15,14 @@ For detailed reading a link is attached bellow it.<br />
 
 
 An web based tool for CRC codes<br />
-To run the program:<br />
-1> Run the command <br />
+### To run the program:<br />
+* Run the command <br />
 ```
 git clone https://github.com/Sohamraje137/cyclic-redundancy-check
 ```
-2> Enter the project directory by entering <br />
+* Enter the project directory by entering <br />
 ```
 cd cyclic-redundancy-check
 ```
 
-3>open DC1.html using any browser
+* open DC1.html using any browser
