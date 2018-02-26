@@ -1,7 +1,8 @@
 # Cyclic-Redundancy-Check
 
-##Question no. A. 7.
-We have implemented Cyclic redundancy check codes using javascript and html.<br />
+## Question no. A. 7.
+<br />
+We have implemented Cyclic redundancy check codes using JavaScript and html.<br />
 Here we use HTML and CSS for the front-end .<br />
 We used simple XOR to calculate the code word .<br />
 We use simple XOR to decode also.<br />
