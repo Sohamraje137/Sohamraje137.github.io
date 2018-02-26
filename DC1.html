@@ -4,32 +4,33 @@
   <head>
     <script type="text/javascript">
       function buttonClick(){
-        
+  //--------------code for sender side-------------------- 
         x=document.getElementById("i0").value;
         y=document.getElementById("i1").value;
        
         
-        
+  
         var a = new Array(x.length); var a1 = new Array(x.length);
             var p = new Array(y.length);
             
-        // document.getElementById("g").innerHTML=x+y+z+w;        
         var i;
         var l,m,n,o;
+ //----------convert the string entered to int value------------------------------//
         var l = parseInt(x)
         var m = parseInt(y)
         
             var l1=x.length
             var l2=y.length
             
-                  
+ //-------split the integer's into array, check if the numbers are binary---------//
                   var t;
                for(i=l1-1;i>=0;i--)
                 {
                   a[i]=parseInt(l%10);  
                   a1[i]=a[i];
                   if(a[i]>1 || a[i]<0)
-                   {                      alert("Enter an valid binary digit");
+                   {                      
+                   	  alert("Enter an valid binary digit");
                       return ;
                    }
                   l=l/10;
@@ -39,138 +40,174 @@
                   p[i]=parseInt(m%10);  
                   m=m/10;
                   if(p[i]>1 || p[i]<0)
-                   {                      alert("Enter an valid binary digit");
+                   {  
+                      alert("Enter an valid binary digit");
                       return ;
                    }
                 }
+       
                   
             var j;
          var string2=" ";
-       //    if(!(empty1 == "") || !(empty2 == ""))
-       // {
+       
+
         var string="";
+
+//-----------add zero's at the end as per the divisor-----------//
         for(t=l1;t<l1+l2-1;t++)
         {
           a[t]=0;
         }
        
+ //----------------------------------------check feilds are blank it is blank------------------------//
         if(l1>0 && l2>0){
              string="The Execution Steps are as follows:"
+     
+//--------------------START DIVISION FOR GETTING THE REMAINDER--------------------------//
           for(i=0;i<l1;i++)
           {
+
                       string+=" "+"<br>"
+     //-------------------------add spaces to indendate output--------------------------//
                                   for( t=0;t<i;t++)
                                    {
                                     string+="\xa0\xa0";
                                    }
+     //--------------------------display the dataword-----------------------------------//             
                                   for( t=i;t<l1+l2-1;t++)
                                    {
                                     string+=""+a[t];
                                    }
                                    string+="<br>";
-                                   
-                                  for( t=0;t<i;t++)
+     //--------------------------add spaces to indendate output-------------------------//
+  
+                                 for( t=0;t<i;t++)
                                    {
                                     string+="\xa0\xa0";
                                    }
                                    
+     //-------------check if bit is '1' so as to XOR with divisor--------------------//                              
             if(a[i]==1)
             {
+     //---------------------------display the divisor--------------------------------//
                                    for( t=0;t<l2;t++)
                                    {
                                     string+=""+p[t];
                                    }
                                     string+="<br>";
-                                   
+     //-------------------------add spaces to indendate output--------------------------//
+                              
                                   for( t=0;t<i;t++)
                                    {
                                     string+="\xa0\xa0";
                                    }
+     //-------------------------add division line to output--------------------------//
+           
                                   for( t=0;t<l2;t++)
                                    {
                                     string+="--";
                                    }
+    //-------------------------add spaces to indendate output--------------------------//
+
                                    string+="<br>";
                                    for( t=0;t<i;t++)
                                    {
                                     string+="\xa0\xa0";
                                    }
+    //------------------------do XOR between the divisor and dataword------------------// 
               for(j=0;j<l2;j++)
               {
+
                 a[i+j]=a[i+j]^p[j];
-                //t+="a[i+j]"+i
                  string+=""+a[i+j];
               }
             }
+    //-----------------------if the bit in dataword is zero----------------------------//
+      
             else{
+  
+
+    //---------------------------display the zero as divisor--------------------------------//
+
                                  for( t=0;t<l2;t++)
                                    {
                                     string+=""+"0";
                                    }
                                     string+="<br>";
-                                   
+     //-------------------------add spaces to indendate output--------------------------//
+
                                   for( t=0;t<i;t++)
                                    {
                                     string+="\xa0\xa0";
                                    }
+     //-------------------------add division line to output--------------------------//
+
                                   for( t=0;t<l2;t++)
                                    {
                                     string+="--";
                                    }
                                    string+="<br>";
+     //-------------------------add spaces to indendate output--------------------------//
+      
                                    for( t=0;t<i;t++)
                                    {
                                     string+="\xa0\xa0";
                                    }
+    //------------------------do XOR between the zero and dataword------------------// 
+
               for(j=0;j<l2;j++)
               {
                 a[i+j]=a[i+j]^0;
-                //t+="a[i+j]"
                   string+=""+a[i+j];
               }
             }
           }
+
+    //-------------------------------Remainder ready----------------------------------//
+
+    //---------------------------copy the remainder beside the dataword---------------//
             for(i=l1;i<a.length;i++)
             {
                 a1[i]=a[i];
             }
+    //------------------------------codeword ready--------------------------------------//
       string+="<br> The code word is :";
             for(i=0;i<a.length;i++)
             {
              string+=" "+a1[i];
             }
           }
-               
-                      document.getElementById("g").innerHTML=string//+"<br>"+p+"<br>"+b+"<br>"+q;
-      //  }
-      //b1//+"<br>"+p+"<br>"+b+"<br>"+q;
-             //document.getElementById("h").innerHTML=t//+"<br>"+p+"<br>"+b+"<br>"+q;
+    //-----------------------------pass String to html code-------------------------------//
+                      document.getElementById("g").innerHTML=string
         }
-    //  }
+    
       
           
      function buttonClick2(){
+  //--------------code for reciever side-------------------- 
+ 
         x=document.getElementById("i10").value;
         y=document.getElementById("i11").value;
         
         
         var a = new Array(x.length); var a1 = new Array(x.length);
             var p = new Array(y.length);
-           
-        // document.getElementById("g").innerHTML=x+y+z+w;        
+            var a3 = new Array(x.length);
         var i;
         var a7 = new Array(x.length-y.length+1);
                 var a2 = new Array(x.length);
 
-      //  var b7 = new Array(z.length-w.length+1);
         var l,m,n,o;
+ //--------------------convert the string entered to int value------------------------------//
+
         var l = parseInt(x)
         var m = parseInt(y)
      
             var l1=x.length
             var l2=y.length
-          
-           
+            var l3=l1;
+   //-------split the integer's into array, check if the numbers are binary ,don't allow blank spaces---------//
+         
                 for(i=l1-1;i>=0;i--)
                 {
                   a[i]=parseInt(l%10);  
@@ -194,28 +231,39 @@
                  
             var j,k;
             var string=" ",t,string2=" ",string3=" ";
+
+  //----------------------------------------check feilds are blank it is blank------------------------//
+
             if(l1>0 && l2>0){
                           string="The Execution Steps are as follows:"
             
          
-  
+ //--------------------START DIVISION FOR CHECKING ERROR--------------------------//
+ 
           for(i=0;i<l1-l2+1;i++)
           {
-                          string+=" "+"<br>"
+                          			string+=" "+"<br>"
+     //-------------------------add spaces to indendate output--------------------------//
+
                                   for( t=0;t<i;t++)
                                    {
                                     string+="\xa0\xa0";
                                    }
+     //--------------------------display the codeword-----------------------------------//             
+
                                   for( t=i;t<l1;t++)
                                    {
                                     string+=""+a[t];
                                    }
                                    string+="<br>";
-                                   
+     //-------------------------add spaces to indendate output--------------------------//
+                
                                   for( t=0;t<i;t++)
                                    {
                                     string+="\xa0\xa0";
                                    }
+     //-------------check if bit is '1' so as to XOR with divisor--------------------//                              
+
             if(a[i]==1)
             {
                                    for( t=0;t<l2;t++)
@@ -223,52 +271,66 @@
                                     string+=""+p[t];
                                    }
                                     string+="<br>";
-                                   
+     //-------------------------add spaces to indendate output--------------------------//
+
                                   for( t=0;t<i;t++)
                                    {
                                     string+="\xa0\xa0";
                                    }
+     //-------------------------add division line to output--------------------------//
+
                                   for( t=0;t<l2;t++)
                                    {
                                     string+="--";
                                    }
                                    string+="<br>";
-                                   for( t=0;t<i;t++)
+     //-------------------------add spaces to indendate output--------------------------//
+								 for( t=0;t<i;t++)
                                    {
                                     string+="\xa0\xa0";
-                                   }                      
+                                   }    
+    //------------------------do XOR between the divisor and codeword------------------// 
+
               for(j=0;j<l2;j++)
               {
                 a[i+j]=a[i+j]^p[j];
-                //t+="a[i+j]"+i
                 string+=""+a[i+j];
               }
             }
+    //-----------------------if the bit in codeword is zero----------------------------//
+
             else
             {
+    //---------------------------display the zero as divisor--------------------------------//
                                      for( t=0;t<l2;t++)
                                    {
                                     string+=""+"0";
                                    }
                                     string+="<br>";
-                                   
+     //-------------------------add spaces to indendate output--------------------------//
+   
                                   for( t=0;t<i;t++)
                                    {
                                     string+="\xa0\xa0";
                                    }
+     //-------------------------add division line to output--------------------------//
+
                                   for( t=0;t<l2;t++)
                                    {
                                     string+="--";
                                    }
                                    string+="<br>";
+     //-------------------------add spaces to indendate output--------------------------//
+                               
                                    for( t=0;t<i;t++)
                                    {
                                     string+="\xa0\xa0";
                                    }
+    //------------------------do XOR between the zero and codeword------------------// 
+
               for(j=0;j<l2;j++)
               {
                 a[i+j]=a[i+j]^0;
-                //t+="a[i+j]"
                 string+=""+a[i+j];
               }
             }
@@ -276,13 +338,14 @@
         
             
                   var count1=0,count5=0,count2=0,c=0;
-
+    //----------------------------To check if remainder is zero or no------------------------//
                 for(i=l1-l2+1;i<l1;i++){
                 if(a[i]==0)
-                { //string+=a[i];
+                { 
                   count1=count1+1;
                 }
               }
+    //----------------------------If remainder is zero display the dataword-------------------//
               if(count1==l2-1){
                 string+="<br> The data word is :";
                 for(i=0;i<l1-l2+1;i++)
@@ -290,83 +353,163 @@
                 string+=" "+a1[i];
                 }
              }
+    //-------------------------------If remainder is not zero-------------------------------------//
             else
             {
                 string+="<br> Error in transmission <br>The remainder is :";
                 for(i=l1-l2+1;i<l1;i++){
                   string+=" "+a[i];
                 }
-             
+    //-----------------------------try to check if there is a 1-bit error-------------------------//
                do{
-                count5=0;
+                    count5=0;
                 
-               
-
+    //-----------------------------save array in another array------------------------------------//
+//string3+="<br>"+"Check for next bit"+"<br>";
                 for(k=0;k<l1;k++)
                 { 
                    a1[k]=a2[k];
-                                   
+ //                  string3+=a1[k]+" ";
                 }
+    //-----------change one bit at everytime and see for remainder equal to zero-------------------//
                  a1[count2]=a1[count2]^1;
                  count2++;
+   //              string3+="<br>";
+                  for(k=0;k<l1;k++)
+                { 
+                  a3[k]=a1[k];
+   //                string3+=a1[k]+" ";
+                }
+                
+    //------------------Use the same code to check the remainder is zero as above-----------------//
                 for(k=0;k<l1-l2+1;k++)
-                {
+                {               
+     //            	            string3+=" "+"<br>"
+     // //-------------------------add spaces to indendate output--------------------------//
+
+     //                              for( t=0;t<k;t++)
+     //                               {
+     //                                string3+="\xa0\xa0";
+     //                               }
+     // //--------------------------display the codeword-----------------------------------//             
+
+     //                              for( t=k;t<l1;t++)
+     //                               {
+     //                                string3+=""+a1[t];
+     //                               }
+     //                               string3+="<br>";
+     // //-------------------------add spaces to indendate output--------------------------//
+                
+     //                              for( t=0;t<k;t++)
+     //                               {
+     //                                string3+="\xa0\xa0";
+     //                               }
                     if(a1[k]==1)
                     {
+     //                	            for( t=0;t<l2;t++)
+     //                               {
+     //                                string3+=""+p[t];
+     //                               }
+     //                                string3+="<br>";
+     // //-------------------------add spaces to indendate output--------------------------//
+
+     //                              for( t=0;t<k;t++)
+     //                               {
+     //                                string3+="\xa0\xa0";
+     //                               }
+     // //-------------------------add division line to output--------------------------//
+
+     //                              for( t=0;t<l2;t++)
+     //                               {
+     //                                string3+="--";
+     //                               }
+     //                               string3+="<br>";
+     // //-------------------------add spaces to indendate output--------------------------//
+					// 			 for( t=0;t<k;t++)
+     //                               {
+     //                                string3+="\xa0\xa0";
+     //                               }    
                       for(j=0;j<l2;j++)
                       {
-                        a1[j]=a1[j]^p[j];
-                                       
+                      	 // string3+="\xa0\xa0"+a1[j]+" ^ "+p[j];
+                        a1[j+k]=a1[j+k]^p[j]
 
+                      //  string3+=a1[j]+"";   
                       }
                     }
                     else{
+
+    // //---------------------------display the zero as divisor--------------------------------//
+    //                                  for( t=0;t<l2;t++)
+    //                                {
+    //                                 string3+=""+"0";
+    //                                }
+    //                                 string3+="<br>";
+    //  //-------------------------add spaces to indendate output--------------------------//
+   
+    //                               for( t=0;t<k;t++)
+    //                                {
+    //                                 string3+="\xa0\xa0";
+    //                                }
+    //  //-------------------------add division line to output--------------------------//
+
+    //                               for( t=0;t<l2;t++)
+    //                                {
+    //                                 string3+="--";
+    //                                }
+    //                                string3+="<br>";
+    //  //-------------------------add spaces to indendate output--------------------------//
+                               
+    //                                for( t=0;t<k;t++)
+    //                                {
+    //                                 string3+="\xa0\xa0";
+    //                                }
+    // //------------------------do XOR between the zero and codeword------------------// 
+
                        for(j=0;j<l2;j++)
                       {
-                        a1[j]=a1[j]^0;                
+                        a1[j+k]=a1[j+k]^0; 
+     //                  string3+=""+a1[j];               
                       }
-
                     }
                 }
                 for(k=l1-l2+1;k<l1;k++){
-                    console.log(a[k]);
+                   // console.log(a1[k]);
                 if(a1[k]==0)
                 { //string+=a[i];
                   count5=count5+1;
-
-
                 }
 
                 }
+    //--------------------------Check if remainder is zero---------------------------------------//
                   if(count5==l2-1)
                   {               
 
-                    string3="<br>The correct dataword may be:\xa0";
+                    string3+="<br>The correct dataword may be:\xa0";
                     
                         for(k=0;k<l1-l2+1;k++)
                         {
-                           string3+=" "+a2[k];
+                           string3+=" "+a3[k];
                         }            
                            c=1;
                           string+=string3;
                          }
 
              }while(c!=1 &&count2<=l1);
-             if(c==0)
-            string+="<br>More than 1 bit error";
-          
+           if(c==0)
+            string+="More than 1 bit error...";          
          }
             
-            // sting+=count1;
+          
               
-               document.getElementById("k").innerHTML=string//+"<br>"+p+"<br>"+b+"<br>"+q;
- //b7//+"<br>"+p+"<br>"+q;
-         //document.getElementById("h").innerHTML=t//+"<br>"+p+"<br>"+b+"<br>"+q;
-      }
+               document.getElementById("k").innerHTML=string
+ 
+       }
     }
     </script>
 
   <!--   CSS -->
+  <!-- Give styling to navigation bar add hover effects-->
     <style>
 ul { margin: 0;
      padding: 0;
@@ -399,19 +542,26 @@ li a:hover {
   </style>
   </head>
   <body>
+ <!-- Add navigation bar so that the new student can get a brief idea about CRC-->
     <div>
     <ul>
+  <!--add Descripton about CRC-->
       <li><a  href="t.html">Description</a></li>
+    <!--add Descripton about Divisor-->
+
       <li><a  href="t2.html">Polynomial</a></li>
+      <!--add Descripton about 1 bit-error correction code-->
       <li><a  href="t3.html">1 bit error</a></li>
     </ul>
   </div>
-
+                <!--Add sender and reciever beside each other-->
 
   <div style="clear:both"></div>
    <div>
     <br>
   </div>
+  <!--Add heading to the Page-->
+
     <h1 align="center">Cyclic Redundancy Check</h1>
 
 
@@ -419,9 +569,15 @@ li a:hover {
 
 
     <div style="float:left; width: 50%">
+    	     <!--Get dataword and divisor from sender side using html functions-->
+
     <h2 align="center">Sender</h2>
     <form name="form1">
+    	<!--Take input of Dataword-->
+
       Binary coefficients: <input type="number" name="Binary" id="i0" > &nbsp;  &nbsp;  &nbsp;
+      <!--Take input of polynomial-->
+
       Divisor:<input type="number" name="divisor" id="i1">
       
       <br><br><br><input type="button" value="submit" onclick="buttonClick()">
@@ -441,7 +597,10 @@ li a:hover {
     <div style="float:right; width: 50%">
      <h2 align="center">Receiver</h2>
     <form>
+    	   <!--Get codeword and divisor from receiver side using html functions-->
+
       Binary coefficients: <input type="number" name="Binary" id="i10"> &nbsp;  &nbsp;  &nbsp;
+
       Divisor:<input type="number" name="divisor" id="i11">
       
       
@@ -449,7 +608,7 @@ li a:hover {
      <br><br>
      <br>
      <p id="k"></p>
-          <p id="l"></p>
+     <p id="l"></p>
 
     </form>
    </div>

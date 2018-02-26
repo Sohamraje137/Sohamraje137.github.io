@@ -1,7 +1,7 @@
 # Cyclic-Redundancy-Check
 
 ## Question no. A. 7.
-<br />
+
 
 We have implemented Cyclic redundancy check codes using JavaScript and html.<br />
 Here we use HTML and CSS for the front-end .<br />
