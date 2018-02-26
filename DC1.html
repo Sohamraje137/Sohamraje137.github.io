@@ -7,25 +7,21 @@
         
         x=document.getElementById("i0").value;
         y=document.getElementById("i1").value;
-        z=document.getElementById("i2").value;
-        w=document.getElementById("i3").value;
+       
         
         
         var a = new Array(x.length); var a1 = new Array(x.length);
             var p = new Array(y.length);
-            var b= new Array(z.length);   var b1= new Array(z.length);
-            var q= new Array(w.length);
+            
         // document.getElementById("g").innerHTML=x+y+z+w;        
         var i;
         var l,m,n,o;
         var l = parseInt(x)
         var m = parseInt(y)
-        var n = parseInt(z)
-            var o = parseInt(w)    
+        
             var l1=x.length
             var l2=y.length
-            var l3=z.length
-            var l4=w.length
+            
                   
                   var t;
                for(i=l1-1;i>=0;i--)
@@ -47,25 +43,7 @@
                       return ;
                    }
                 }
-                  for(i=l3-1;i>=0;i--)
-                {
-                  b[i]=parseInt(n%10);  
-                  b1[i]=b[i];
-                  n=n/10;
-                  if(b[i]>1 || b[i]<0)
-                   {                      alert("Enter an valid binary digit");
-                      return ;
-                   }
-                }
-                  for(i=l4-1;i>=0;i--)
-                {
-                  q[i]=parseInt(o%10);  
-                  o=o/10;
-                  if(q[i]>1 || q[i]<0)
-                   {                      alert("Enter an valid binary digit");
-                      return ;
-                   }
-                }
+                  
             var j;
          var string2=" ";
        //    if(!(empty1 == "") || !(empty2 == ""))
@@ -75,10 +53,7 @@
         {
           a[t]=0;
         }
-         for(t=l3;t<l3+l4-1;t++)
-        {
-          b[t]=0;
-        }
+       
         if(l1>0 && l2>0){
              string="The Execution Steps are as follows:"
           for(i=0;i<l1;i++)
@@ -165,137 +140,42 @@
              string+=" "+a1[i];
             }
           }
+               
                       document.getElementById("g").innerHTML=string//+"<br>"+p+"<br>"+b+"<br>"+q;
       //  }
-      if(l3>0 && l4>0){
-           string2="The Execution Steps are as follows:"
-       //else{  
-          for(i=0;i<l3;i++)
-          {
-                                  string2+=" "+"<br>"
-                                  for( t=0;t<i;t++)
-                                   {
-                                    string2+="\xa0\xa0";
-                                   }
-                                  for( t=i;t<l3+l4-1;t++)
-                                   {
-                                    string2+=""+b[t];
-                                   }
-                                   string2+="<br>";
-                                   
-                                  for( t=0;t<i;t++)
-                                   {
-                                    string2+="\xa0\xa0";
-                                   }
-              if(b[i]==1)
-              {
-                                for( t=0;t<l4;t++)
-                                   {
-                                    string2+=""+q[t];
-                                   }
-                                    string2+="<br>";
-                                   
-                                  for( t=0;t<i;t++)
-                                   {
-                                    string2+="\xa0\xa0";
-                                   }
-                                  for( t=0;t<l4;t++)
-                                   {
-                                    string2+="--";
-                                   }
-                                   string2+="<br>";
-                                   for( t=0;t<i;t++)
-                                   {
-                                    string2+="\xa0\xa0";
-                                   }
-                for(j=0;j<l4;j++)
-                {
-                  b[i+j]=b[i+j]^q[j];
-                  //t+="a[i+j]"+i
-                  string2+=""+b[i+j];
-                }
-              }
-                else
-                {
-                                    for( t=0;t<l4;t++)
-                                   {
-                                    string2+=""+"0";
-                                   }
-                                    string2+="<br>";
-                                   
-                                  for( t=0;t<i;t++)
-                                   {
-                                    string2+="\xa0\xa0";
-                                   }
-                                  for( t=0;t<l4;t++)
-                                   {
-                                    string2+="--";
-                                   }
-                                   string2+="<br>";
-                                   for( t=0;t<i;t++)
-                                   {
-                                    string2+="\xa0\xa0";
-                                   }
-                  for(j=0;j<l4;j++)
-                  {
-                    b[i+j]=b[i+j]^0;
-                    //t+="a[i+j]"
-                 string2+=""+b[i+j];
-                  }
-                }
-              }
-                for(i=l4;i<b.length;i++)
-            {
-                b1[i]=b[i];
-            }
-            string2+="<br> The code word is :";
-             for(i=0;i<b.length;i++)
-            {
-             string2+=" "+b1[i];
-            }
-       }
-           
-           document.getElementById("h").innerHTML=string2//b1//+"<br>"+p+"<br>"+b+"<br>"+q;
+      //b1//+"<br>"+p+"<br>"+b+"<br>"+q;
              //document.getElementById("h").innerHTML=t//+"<br>"+p+"<br>"+b+"<br>"+q;
         }
     //  }
-      function keytest(){
-        var tes=/^(?=.*[0-1])$/;
-        x=document.getElementById("i0").value;
-        // if(!tes.test(x))
-        //  alert("Enter valid keyword");
-      }
-        
+      
           
      function buttonClick2(){
         x=document.getElementById("i10").value;
         y=document.getElementById("i11").value;
-        z=document.getElementById("i12").value;
-        w=document.getElementById("i13").value;
         
         
         var a = new Array(x.length); var a1 = new Array(x.length);
             var p = new Array(y.length);
-            var b= new Array(z.length);   var b1= new Array(z.length);
-            var q= new Array(w.length);
+           
         // document.getElementById("g").innerHTML=x+y+z+w;        
         var i;
         var a7 = new Array(x.length-y.length+1);
-        var b7 = new Array(z.length-w.length+1);
+                var a2 = new Array(x.length);
+
+      //  var b7 = new Array(z.length-w.length+1);
         var l,m,n,o;
         var l = parseInt(x)
         var m = parseInt(y)
-        var n = parseInt(z)
-            var o = parseInt(w)    
+     
             var l1=x.length
             var l2=y.length
-            var l3=z.length
-            var l4=w.length
+          
            
                 for(i=l1-1;i>=0;i--)
                 {
                   a[i]=parseInt(l%10);  
                   a1[i]=a[i];
+                  a2[i]=a[i];
                   l=l/10;
                    if(a[i]>1 || a[i]<0)
                    {                        alert("Enter an valid binary digit");
@@ -311,26 +191,7 @@
                       return ;
                    }
                 }
-                  for(i=l3-1;i>=0;i--)
-                {  
-                  b[i]=parseInt(n%10);  
-                  b1[i]=b[i];
-                  n=n/10;
-                   if(b[i]>1 || b[i]<0)
-                   {                        alert("Enter an valid binary digit");
-                      return ;
-                   }
-                }
-                  for(i=l4-1;i>=0;i--)
-                {
-                  q[i]=parseInt(o%10);  
-                  o=o/10;
-                   if(q[i]>1 || q[i]<0)
-                   { 
-                      alert("Enter an valid binary digit");
-                      return ;
-                   }
-                }
+                 
             var j,k;
             var string=" ",t,string2=" ",string3=" ";
             if(l1>0 && l2>0){
@@ -414,7 +275,7 @@
           }
         
             
-                  var count1=0;
+                  var count1=0,count5=0,count2=0,c=0;
 
                 for(i=l1-l2+1;i<l1;i++){
                 if(a[i]==0)
@@ -435,193 +296,74 @@
                 for(i=l1-l2+1;i<l1;i++){
                   string+=" "+a[i];
                 }
+             
+               do{
+                count5=0;
+                
+               
 
                 for(k=0;k<l1;k++)
+                { 
+                   a1[k]=a2[k];
+                                   
+                }
+                 a1[count2]=a1[count2]^1;
+                 count2++;
+                for(k=0;k<l1-l2+1;k++)
                 {
-                   a[k]=a[k]^1;
-                     for(i=0;i<l1-l2+1;i++)
+                    if(a1[k]==1)
                     {
-                          string+=" "+"<br>"
-                                  for( t=0;t<i;t++)
-                                   {
-                                    string+="\xa0\xa0";
-                                   }
-                                  for( t=i;t<l1;t++)
-                                   {
-                                    string+=""+a[t];
-                                   }
-                                   string+="<br>";
-                                   
-                                  for( t=0;t<i;t++)
-                                   {
-                                    string+="\xa0\xa0";
-                                   }
-            if(a[i]==1)
-            {
-                                   for( t=0;t<l2;t++)
-                                   {
-                                    string+=""+p[t];
-                                   }
-                                    string+="<br>";
-                                   
-                                  for( t=0;t<i;t++)
-                                   {
-                                    string+="\xa0\xa0";
-                                   }
-                                  for( t=0;t<l2;t++)
-                                   {
-                                    string+="--";
-                                   }
-                                   string+="<br>";
-                                   for( t=0;t<i;t++)
-                                   {
-                                    string+="\xa0\xa0";
-                                   }                      
-              for(j=0;j<l2;j++)
-              {
-                a[i+j]=a[i+j]^p[j];
-                //t+="a[i+j]"+i
-                string+=""+a[i+j];
-              }
-            }
-            else
-            {
-                                     for( t=0;t<l2;t++)
-                                   {
-                                    string+=""+"0";
-                                   }
-                                    string+="<br>";
-                                   
-                                  for( t=0;t<i;t++)
-                                   {
-                                    string+="\xa0\xa0";
-                                   }
-                                  for( t=0;t<l2;t++)
-                                   {
-                                    string+="--";
-                                   }
-                                   string+="<br>";
-                                   for( t=0;t<i;t++)
-                                   {
-                                    string+="\xa0\xa0";
-                                   }
-              for(j=0;j<l2;j++)
-              {
-                a[i+j]=a[i+j]^0;
-                //t+="a[i+j]"
-                string+=""+a[i+j];
-              }
-            }
-          }
-                }
-            }
-            // string+=count1;
-              }
-               document.getElementById("k").innerHTML=string//+"<br>"+p+"<br>"+b+"<br>"+q;
-  var string2="  ";
-  if(l3>0 && l4>0){
-  string2="The Execution Steps are as follows:"
-   
-        for(i=0;i<l3-l4+1;i++)
-          { 
-                                  string2+=" "+"<br>"
-                                  for( t=0;t<i;t++)
-                                   {
-                                    string2+="\xa0\xa0";
-                                   }
-                                  for( t=i;t<l3;t++)
-                                   {
-                                    string2+=""+b[t];
-                                   }
-                                   string2+="<br>";
-                                   
-                                  for( t=0;t<i;t++)
-                                   {
-                                    string2+="\xa0\xa0";
-                                   }
-            if(b[i]==1)
-            {
-                                    for( t=0;t<l4;t++)
-                                   {
-                                    string2+=""+q[t];
-                                   }
-                                    string2+="<br>";
-                                   
-                                  for( t=0;t<i;t++)
-                                   {
-                                    string2+="\xa0\xa0";
-                                   }
-                                  for( t=0;t<l4;t++)
-                                   {
-                                    string2+="--";
-                                   }
-                                   string2+="<br>";
-                                   for( t=0;t<i;t++)
-                                   {
-                                    string2+="\xa0\xa0";
-                                   }
-              for(j=0;j<l4;j++)
-              {
-                b[i+j]=b[i+j]^q[j];
-                //t+="a[i+j]"+i
-                string2+=""+b[i+j];
-              }
-            }
-            else
-            {
-                                    for( t=0;t<l4;t++)
-                                   {
-                                    string2+=""+"0";
-                                   }
-                                    string2+="<br>";
-                                   
-                                  for( t=0;t<i;t++)
-                                   {
-                                    string2+="\xa0\xa0";
-                                   }
-                                  for( t=0;t<l4;t++)
-                                   {
-                                    string2+="--";
-                                   }
-                                   string2+="<br>";
-                                   for( t=0;t<i;t++)
-                                   {
-                                    string2+="\xa0\xa0";
-                                   }
-              for(j=0;j<l4;j++)
-              {
-                b[i+j]=b[i+j]^0;
-                //t+="a[i+j]"
-                string2+=""+b[i+j];
-              }
-            }
-          }
-          var count=0;
-              for(i=l3-l4+1;i<l3;i++){
-                if(b[i]==0)
-                {
-                  count=count+1;
-                }
-              }
-        if(count==l4-1){
-        string2+="<br> The data word is :";
-             for(i=0;i<l3-l4+1;i++)
-            {
-             string2+=" "+b1[i];
-            }
-      }
-      else
-      {
-                string2+="<br> Error in transmission <br>The remainder is :";
-                for(i=l3-l4+1;i<l3;i++){
-                  string2+=" "+b[i];
-                }
-      }
+                      for(j=0;j<l2;j++)
+                      {
+                        a1[j]=a1[j]^p[j];
+                                       
 
-    }
-       document.getElementById("l").innerHTML=string2//b7//+"<br>"+p+"<br>"+q;
+                      }
+                    }
+                    else{
+                       for(j=0;j<l2;j++)
+                      {
+                        a1[j]=a1[j]^0;                
+                      }
+
+                    }
+                }
+                for(k=l1-l2+1;k<l1;k++){
+                    console.log(a[k]);
+                if(a1[k]==0)
+                { //string+=a[i];
+                  count5=count5+1;
+
+
+                }
+
+                }
+                  if(count5==l2-1)
+                  {               
+
+                    string3="<br>The correct dataword may be:\xa0";
+                    
+                        for(k=0;k<l1-l2+1;k++)
+                        {
+                           string3+=" "+a2[k];
+                        }            
+                           c=1;
+                          string+=string3;
+                         }
+
+             }while(c!=1 &&count2<=l1);
+             if(c==0)
+            string+="<br>More than 1 bit error";
+          
+         }
+            
+            // sting+=count1;
+              
+               document.getElementById("k").innerHTML=string//+"<br>"+p+"<br>"+b+"<br>"+q;
+ //b7//+"<br>"+p+"<br>"+q;
          //document.getElementById("h").innerHTML=t//+"<br>"+p+"<br>"+b+"<br>"+q;
       }
+    }
     </script>
 
   <!--   CSS -->
@@ -654,7 +396,6 @@ li a:hover {
 </head>
 
 <!-- Body -->
-<body>
   </style>
   </head>
   <body>
@@ -678,32 +419,32 @@ li a:hover {
 
 
     <div style="float:left; width: 50%">
-    <h2 align="center">Generator</h2>
+    <h2 align="center">Sender</h2>
     <form name="form1">
-      Binary coefficients: <input type="number" name="Binary" id="i0" onkeydown="keytest()"> &nbsp;  &nbsp;  &nbsp;
+      Binary coefficients: <input type="number" name="Binary" id="i0" > &nbsp;  &nbsp;  &nbsp;
       Divisor:<input type="number" name="divisor" id="i1">
-      <br><br><br>
-      polynomial :&nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;   &nbsp; <input type="number" name="polynomial" id="i2"> &nbsp;  &nbsp;  &nbsp;
-      Divisor: <input type="number" name="divisor2" id="i3">
+      
       <br><br><br><input type="button" value="submit" onclick="buttonClick()">
      <br><br>
      <br>
      <p id="g"></p>
-     <p id="h"></p>
     </form>
    </div>
+ </body>
+</body>
+</html>
+
 
 
 
 
     <div style="float:right; width: 50%">
-     <h2 align="center">Checker</h2>
+     <h2 align="center">Receiver</h2>
     <form>
-      Binary coefficients: <input type="number" name="Binary" id="i10" onkeydown="keytest()"> &nbsp;  &nbsp;  &nbsp;
+      Binary coefficients: <input type="number" name="Binary" id="i10"> &nbsp;  &nbsp;  &nbsp;
       Divisor:<input type="number" name="divisor" id="i11">
-      <br><br><br>
-      polynomial :&nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;   &nbsp; <input type="number" name="polynomial" id="i12"> &nbsp;  &nbsp;  &nbsp;
-      Divisor: <input type="number" name="divisor2" id="i13">
+      
+      
       <br><br><br><input type="button" value="submit" onclick="buttonClick2()">
      <br><br>
      <br>
@@ -712,10 +453,7 @@ li a:hover {
 
     </form>
    </div>
-   
-
-
-
+  
 
     </body>
 </html>
