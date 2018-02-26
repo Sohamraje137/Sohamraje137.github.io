@@ -1,9 +1,6 @@
 # Cyclic-Redundancy-Check
-#### Team members
 <br />
-Bidyadhar Mohanty(16CO212)
-Soham P. Patil (16CO249)
-### Question no. A. 7.
+## Question no. A. 7.
 <br />
 
 We have implemented Cyclic redundancy check codes using JavaScript and html.<br />
@@ -16,7 +13,10 @@ We change every bit at once and check it. <br />
 The code is properly indendated.<br /> 
 The buttons on the navigation bar gives brief idea about CRC,Polynomials or divisors ,1 bit error correction algorithm.<br />
 For detailed reading a link is attached bellow it.<br />
-
+#### Team members
+<br />
+Bidyadhar Mohanty(16CO212)<br />
+Soham P. Patil (16CO249)<br />
 
 An web based tool for CRC codes<br />
 ### To run the program:<br />
