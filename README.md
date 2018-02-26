@@ -9,6 +9,8 @@ We have implemented 1 bit error checker.The actual algorithm is to use idea of c
 But every divisor will have its own table and using that is not easy. So, we use a alternate 
 We change every bit at once and check it. 
 The code is properly indendated.
+The buttons on the navigation bar gives brief idea about CRC,Polynomials or divisors ,1 bit error correction algorithm.
+For detailed reading a link is attached bellow it.
 
 
 An web based tool for CRC codes<br />
