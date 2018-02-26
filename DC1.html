@@ -1,28 +1,26 @@
+
 <!DOCTYPE>
 <html>
   <head>
-  	<script type="text/javascript">
-  		function buttonClick(){
-  			
-
-
-  			x=document.getElementById("i0").value;
-
-   			y=document.getElementById("i1").value;
-  			z=document.getElementById("i2").value;
-  			w=document.getElementById("i3").value;
-  			
-  			
-  			var a = new Array(x.length); var a1 = new Array(x.length);
+    <script type="text/javascript">
+      function buttonClick(){
+        
+        x=document.getElementById("i0").value;
+        y=document.getElementById("i1").value;
+        z=document.getElementById("i2").value;
+        w=document.getElementById("i3").value;
+        
+        
+        var a = new Array(x.length); var a1 = new Array(x.length);
             var p = new Array(y.length);
             var b= new Array(z.length);   var b1= new Array(z.length);
             var q= new Array(w.length);
-  			// document.getElementById("g").innerHTML=x+y+z+w;        
-  			var i;
-  			var l,m,n,o;
-  			var l = parseInt(x)
-  			var m = parseInt(y)
-  			var n = parseInt(z)
+        // document.getElementById("g").innerHTML=x+y+z+w;        
+        var i;
+        var l,m,n,o;
+        var l = parseInt(x)
+        var m = parseInt(y)
+        var n = parseInt(z)
             var o = parseInt(w)    
             var l1=x.length
             var l2=y.length
@@ -30,58 +28,46 @@
             var l4=w.length
                   
                   var t;
-
                for(i=l1-1;i>=0;i--)
                 {
-                  a[i]=parseInt(l%10);	
+                  a[i]=parseInt(l%10);  
                   a1[i]=a[i];
                   if(a[i]>1 || a[i]<0)
-                   {                   	  alert("Enter an valid binary digit");
-
-                   	  return ;
+                   {                      alert("Enter an valid binary digit");
+                      return ;
                    }
                   l=l/10;
                 }
                   for(i=l2-1;i>=0;i--)
                 {
-                  p[i]=parseInt(m%10);	
+                  p[i]=parseInt(m%10);  
                   m=m/10;
                   if(p[i]>1 || p[i]<0)
-                   {                   	  alert("Enter an valid binary digit");
-
-                   	  return ;
+                   {                      alert("Enter an valid binary digit");
+                      return ;
                    }
-
                 }
                   for(i=l3-1;i>=0;i--)
                 {
-                  b[i]=parseInt(n%10);	
+                  b[i]=parseInt(n%10);  
                   b1[i]=b[i];
                   n=n/10;
                   if(b[i]>1 || b[i]<0)
-                   {                   	  alert("Enter an valid binary digit");
-
-                   	  return ;
+                   {                      alert("Enter an valid binary digit");
+                      return ;
                    }
-
                 }
                   for(i=l4-1;i>=0;i--)
                 {
-                  q[i]=parseInt(o%10);	
+                  q[i]=parseInt(o%10);  
                   o=o/10;
                   if(q[i]>1 || q[i]<0)
-                   {                   	  alert("Enter an valid binary digit");
-
-                   	  return ;
+                   {                      alert("Enter an valid binary digit");
+                      return ;
                    }
-
                 }
             var j;
-
-
-
-         var string2;
-
+         var string2=" ";
        //    if(!(empty1 == "") || !(empty2 == ""))
        // {
         var string="";
@@ -89,15 +75,12 @@
         {
           a[t]=0;
         }
-
          for(t=l3;t<l3+l4-1;t++)
         {
           b[t]=0;
         }
-
-
- string="The Execution Steps are as follows:"
-
+        if(l1>0 && l2>0){
+             string="The Execution Steps are as follows:"
           for(i=0;i<l1;i++)
           {
                       string+=" "+"<br>"
@@ -115,11 +98,9 @@
                                    {
                                     string+="\xa0\xa0";
                                    }
-
                                    
-          	if(a[i]==1)
-          	{
-
+            if(a[i]==1)
+            {
                                    for( t=0;t<l2;t++)
                                    {
                                     string+=""+p[t];
@@ -139,15 +120,15 @@
                                    {
                                     string+="\xa0\xa0";
                                    }
-          		for(j=0;j<l2;j++)
-          		{
-          			a[i+j]=a[i+j]^p[j];
-          			//t+="a[i+j]"+i
+              for(j=0;j<l2;j++)
+              {
+                a[i+j]=a[i+j]^p[j];
+                //t+="a[i+j]"+i
                  string+=""+a[i+j];
-          		}
-          	}
-          	else{
-          	                     for( t=0;t<l2;t++)
+              }
+            }
+            else{
+                                 for( t=0;t<l2;t++)
                                    {
                                     string+=""+"0";
                                    }
@@ -166,41 +147,31 @@
                                    {
                                     string+="\xa0\xa0";
                                    }
-          		for(j=0;j<l2;j++)
-          		{
-
-          			a[i+j]=a[i+j]^0;
-          			//t+="a[i+j]"
+              for(j=0;j<l2;j++)
+              {
+                a[i+j]=a[i+j]^0;
+                //t+="a[i+j]"
                   string+=""+a[i+j];
-          		}
-          	}
+              }
+            }
           }
-		        for(i=l1;i<a.length;i++)
-		        {
-		            a1[i]=a[i];
-		        }
-
+            for(i=l1;i<a.length;i++)
+            {
+                a1[i]=a[i];
+            }
       string+="<br> The code word is :";
             for(i=0;i<a.length;i++)
             {
              string+=" "+a1[i];
             }
+          }
                       document.getElementById("g").innerHTML=string//+"<br>"+p+"<br>"+b+"<br>"+q;
-
       //  }
-
-
-
-
-
-
-string2="The Execution Steps are as follows:"
-
-
+      if(l3>0 && l4>0){
+           string2="The Execution Steps are as follows:"
        //else{  
           for(i=0;i<l3;i++)
-	        {
-
+          {
                                   string2+=" "+"<br>"
                                   for( t=0;t<i;t++)
                                    {
@@ -216,12 +187,8 @@ string2="The Execution Steps are as follows:"
                                    {
                                     string2+="\xa0\xa0";
                                    }
-
-
-
-
-	          	if(b[i]==1)
-	          	{
+              if(b[i]==1)
+              {
                                 for( t=0;t<l4;t++)
                                    {
                                     string2+=""+q[t];
@@ -241,15 +208,15 @@ string2="The Execution Steps are as follows:"
                                    {
                                     string2+="\xa0\xa0";
                                    }
-	          		for(j=0;j<l4;j++)
-	          		{
-	          			b[i+j]=b[i+j]^q[j];
-	          			//t+="a[i+j]"+i
+                for(j=0;j<l4;j++)
+                {
+                  b[i+j]=b[i+j]^q[j];
+                  //t+="a[i+j]"+i
                   string2+=""+b[i+j];
-	          		}
-	          	}
-		          	else
-		          	{
+                }
+              }
+                else
+                {
                                     for( t=0;t<l4;t++)
                                    {
                                     string2+=""+"0";
@@ -269,64 +236,56 @@ string2="The Execution Steps are as follows:"
                                    {
                                     string2+="\xa0\xa0";
                                    }
-		          		for(j=0;j<l4;j++)
-		          		{
-		          			b[i+j]=b[i+j]^0;
-		          			//t+="a[i+j]"
+                  for(j=0;j<l4;j++)
+                  {
+                    b[i+j]=b[i+j]^0;
+                    //t+="a[i+j]"
                  string2+=""+b[i+j];
-
-
-		          		}
-		          	}
-		          }
-				        for(i=l4;i<b.length;i++)
-		        {
-		            b1[i]=b[i];
-		        }
+                  }
+                }
+              }
+                for(i=l4;i<b.length;i++)
+            {
+                b1[i]=b[i];
+            }
             string2+="<br> The code word is :";
              for(i=0;i<b.length;i++)
             {
              string2+=" "+b1[i];
             }
-		   
-		       
-
-		       document.getElementById("h").innerHTML=string2//b1//+"<br>"+p+"<br>"+b+"<br>"+q;
-
-		         //document.getElementById("h").innerHTML=t//+"<br>"+p+"<br>"+b+"<br>"+q;
-
+       }
+           
+           document.getElementById("h").innerHTML=string2//b1//+"<br>"+p+"<br>"+b+"<br>"+q;
+             //document.getElementById("h").innerHTML=t//+"<br>"+p+"<br>"+b+"<br>"+q;
         }
-  	//	}
-  		function keytest(){
-  			var tes=/^(?=.*[0-1])$/;
-  			x=document.getElementById("i0").value;
-  			// if(!tes.test(x))
-  			// 	alert("Enter valid keyword");
-  		}
-
+    //  }
+      function keytest(){
+        var tes=/^(?=.*[0-1])$/;
+        x=document.getElementById("i0").value;
+        // if(!tes.test(x))
+        //  alert("Enter valid keyword");
+      }
         
           
-
      function buttonClick2(){
-  			x=document.getElementById("i10").value;
-   			y=document.getElementById("i11").value;
-  			z=document.getElementById("i12").value;
-  			w=document.getElementById("i13").value;
-  			
-  			
-  			var a = new Array(x.length); var a1 = new Array(x.length);
+        x=document.getElementById("i10").value;
+        y=document.getElementById("i11").value;
+        z=document.getElementById("i12").value;
+        w=document.getElementById("i13").value;
+        
+        
+        var a = new Array(x.length); var a1 = new Array(x.length);
             var p = new Array(y.length);
             var b= new Array(z.length);   var b1= new Array(z.length);
             var q= new Array(w.length);
-  			// document.getElementById("g").innerHTML=x+y+z+w;        
-  			var i;
-  			var a7 = new Array(x.length-y.length+1);
-  			var b7 = new Array(z.length-w.length+1);
-
-  			var l,m,n,o;
-  			var l = parseInt(x)
-  			var m = parseInt(y)
-  			var n = parseInt(z)
+        // document.getElementById("g").innerHTML=x+y+z+w;        
+        var i;
+        var a7 = new Array(x.length-y.length+1);
+        var b7 = new Array(z.length-w.length+1);
+        var l,m,n,o;
+        var l = parseInt(x)
+        var m = parseInt(y)
+        var n = parseInt(z)
             var o = parseInt(w)    
             var l1=x.length
             var l2=y.length
@@ -335,57 +294,48 @@ string2="The Execution Steps are as follows:"
            
                 for(i=l1-1;i>=0;i--)
                 {
-                  a[i]=parseInt(l%10);	
+                  a[i]=parseInt(l%10);  
                   a1[i]=a[i];
                   l=l/10;
-
                    if(a[i]>1 || a[i]<0)
-                   {                     	  alert("Enter an valid binary digit");
-
-                   	  return ;
+                   {                        alert("Enter an valid binary digit");
+                      return ;
                    }
                 }
                   for(i=l2-1;i>=0;i--)
                 {
-                  p[i]=parseInt(m%10);	
+                  p[i]=parseInt(m%10);  
                   m=m/10;
-
-
                    if(p[i]>1 || p[i]<0)
-                   {                    	  alert("Enter an valid binary digit");
-
-                   	  return ;
+                   {                        alert("Enter an valid binary digit");
+                      return ;
                    }
                 }
                   for(i=l3-1;i>=0;i--)
                 {  
-                  b[i]=parseInt(n%10);	
+                  b[i]=parseInt(n%10);  
                   b1[i]=b[i];
                   n=n/10;
-
-
                    if(b[i]>1 || b[i]<0)
-                   {                     	  alert("Enter an valid binary digit");
-
-                   	  return ;
+                   {                        alert("Enter an valid binary digit");
+                      return ;
                    }
                 }
                   for(i=l4-1;i>=0;i--)
                 {
-                  q[i]=parseInt(o%10);	
+                  q[i]=parseInt(o%10);  
                   o=o/10;
-
-
                    if(q[i]>1 || q[i]<0)
                    { 
-                   	  alert("Enter an valid binary digit");
-                   	  return ;
+                      alert("Enter an valid binary digit");
+                      return ;
                    }
                 }
-            var j;
-            var string,t,string2;
-              string="The Execution Steps are as follows:"
-
+            var j,k;
+            var string=" ",t,string2=" ",string3=" ";
+            if(l1>0 && l2>0){
+                          string="The Execution Steps are as follows:"
+            
          
   
           for(i=0;i<l1-l2+1;i++)
@@ -405,10 +355,8 @@ string2="The Execution Steps are as follows:"
                                    {
                                     string+="\xa0\xa0";
                                    }
-
-
-          	if(a[i]==1)
-          	{
+            if(a[i]==1)
+            {
                                    for( t=0;t<l2;t++)
                                    {
                                     string+=""+p[t];
@@ -428,15 +376,15 @@ string2="The Execution Steps are as follows:"
                                    {
                                     string+="\xa0\xa0";
                                    }                      
-          		for(j=0;j<l2;j++)
-          		{
-          			a[i+j]=a[i+j]^p[j];
-          			//t+="a[i+j]"+i
+              for(j=0;j<l2;j++)
+              {
+                a[i+j]=a[i+j]^p[j];
+                //t+="a[i+j]"+i
                 string+=""+a[i+j];
-          		}
-          	}
-          	else
-          	{
+              }
+            }
+            else
+            {
                                      for( t=0;t<l2;t++)
                                    {
                                     string+=""+"0";
@@ -456,50 +404,123 @@ string2="The Execution Steps are as follows:"
                                    {
                                     string+="\xa0\xa0";
                                    }
-
-          		for(j=0;j<l2;j++)
-          		{
-          			a[i+j]=a[i+j]^0;
-          			//t+="a[i+j]"
+              for(j=0;j<l2;j++)
+              {
+                a[i+j]=a[i+j]^0;
+                //t+="a[i+j]"
                 string+=""+a[i+j];
-
-          		}
-          	}
+              }
+            }
           }
-
         
             
                   var count1=0;
-                for(i=l1-l2+1;i<l2;i++){
+
+                for(i=l1-l2+1;i<l1;i++){
                 if(a[i]==0)
-                {
+                { //string+=a[i];
                   count1=count1+1;
                 }
               }
               if(count1==l2-1){
-
-              string+="<br> The data word is :";
-              for(i=0;i<l1-l2+1;i++)
-              {
-              string+=" "+a1[i];
-              }
-      }
-      else
-      {
+                string+="<br> The data word is :";
+                for(i=0;i<l1-l2+1;i++)
+                {
+                string+=" "+a1[i];
+                }
+             }
+            else
+            {
                 string+="<br> Error in transmission <br>The remainder is :";
                 for(i=l1-l2+1;i<l1;i++){
                   string+=" "+a[i];
                 }
 
-      }
-
-
+                for(k=0;k<l1;k++)
+                {
+                   a[k]=a[k]^1;
+                     for(i=0;i<l1-l2+1;i++)
+                    {
+                          string+=" "+"<br>"
+                                  for( t=0;t<i;t++)
+                                   {
+                                    string+="\xa0\xa0";
+                                   }
+                                  for( t=i;t<l1;t++)
+                                   {
+                                    string+=""+a[t];
+                                   }
+                                   string+="<br>";
+                                   
+                                  for( t=0;t<i;t++)
+                                   {
+                                    string+="\xa0\xa0";
+                                   }
+            if(a[i]==1)
+            {
+                                   for( t=0;t<l2;t++)
+                                   {
+                                    string+=""+p[t];
+                                   }
+                                    string+="<br>";
+                                   
+                                  for( t=0;t<i;t++)
+                                   {
+                                    string+="\xa0\xa0";
+                                   }
+                                  for( t=0;t<l2;t++)
+                                   {
+                                    string+="--";
+                                   }
+                                   string+="<br>";
+                                   for( t=0;t<i;t++)
+                                   {
+                                    string+="\xa0\xa0";
+                                   }                      
+              for(j=0;j<l2;j++)
+              {
+                a[i+j]=a[i+j]^p[j];
+                //t+="a[i+j]"+i
+                string+=""+a[i+j];
+              }
+            }
+            else
+            {
+                                     for( t=0;t<l2;t++)
+                                   {
+                                    string+=""+"0";
+                                   }
+                                    string+="<br>";
+                                   
+                                  for( t=0;t<i;t++)
+                                   {
+                                    string+="\xa0\xa0";
+                                   }
+                                  for( t=0;t<l2;t++)
+                                   {
+                                    string+="--";
+                                   }
+                                   string+="<br>";
+                                   for( t=0;t<i;t++)
+                                   {
+                                    string+="\xa0\xa0";
+                                   }
+              for(j=0;j<l2;j++)
+              {
+                a[i+j]=a[i+j]^0;
+                //t+="a[i+j]"
+                string+=""+a[i+j];
+              }
+            }
+          }
+                }
+            }
+            // string+=count1;
+              }
                document.getElementById("k").innerHTML=string//+"<br>"+p+"<br>"+b+"<br>"+q;
-  var string2;
+  var string2="  ";
+  if(l3>0 && l4>0){
   string2="The Execution Steps are as follows:"
-
-
-
    
         for(i=0;i<l3-l4+1;i++)
           { 
@@ -518,9 +539,8 @@ string2="The Execution Steps are as follows:"
                                    {
                                     string2+="\xa0\xa0";
                                    }
-
-          	if(b[i]==1)
-          	{
+            if(b[i]==1)
+            {
                                     for( t=0;t<l4;t++)
                                    {
                                     string2+=""+q[t];
@@ -540,16 +560,15 @@ string2="The Execution Steps are as follows:"
                                    {
                                     string2+="\xa0\xa0";
                                    }
-          		for(j=0;j<l4;j++)
-          		{
-          			b[i+j]=b[i+j]^q[j];
-          			//t+="a[i+j]"+i
+              for(j=0;j<l4;j++)
+              {
+                b[i+j]=b[i+j]^q[j];
+                //t+="a[i+j]"+i
                 string2+=""+b[i+j];
-
-          		}
-          	}
-          	else
-          	{
+              }
+            }
+            else
+            {
                                     for( t=0;t<l4;t++)
                                    {
                                     string2+=""+"0";
@@ -569,16 +588,14 @@ string2="The Execution Steps are as follows:"
                                    {
                                     string2+="\xa0\xa0";
                                    }
-          		for(j=0;j<l4;j++)
-          		{
-          			b[i+j]=b[i+j]^0;
-          			//t+="a[i+j]"
+              for(j=0;j<l4;j++)
+              {
+                b[i+j]=b[i+j]^0;
+                //t+="a[i+j]"
                 string2+=""+b[i+j];
-
-          		}
-          	}
+              }
+            }
           }
-
           var count=0;
               for(i=l3-l4+1;i<l3;i++){
                 if(b[i]==0)
@@ -587,7 +604,6 @@ string2="The Execution Steps are as follows:"
                 }
               }
         if(count==l4-1){
-
         string2+="<br> The data word is :";
              for(i=0;i<l3-l4+1;i++)
             {
@@ -600,30 +616,25 @@ string2="The Execution Steps are as follows:"
                 for(i=l3-l4+1;i<l3;i++){
                   string2+=" "+b[i];
                 }
-
       }
 
+    }
        document.getElementById("l").innerHTML=string2//b7//+"<br>"+p+"<br>"+q;
          //document.getElementById("h").innerHTML=t//+"<br>"+p+"<br>"+b+"<br>"+q;
-
-
-  		}
-
-  	</script>
+      }
+    </script>
 
   <!--   CSS -->
-   	<style>
+    <style>
 ul { margin: 0;
      padding: 0;
     list-style-type: none;
-	overflow: hidden;
+  overflow: hidden;
     background-color: #333;
   }
-
 li {
     float: left;
 }
-
 li a {
     display: flex;
     color: white;
@@ -632,7 +643,6 @@ li a {
     text-decoration: none;
     
 }
-
 li a:hover {
     background-color: #111;
 }
@@ -640,7 +650,6 @@ li a:hover {
    color:black;
     background-color: grey; 
    }
-
 </style>
 </head>
 
@@ -649,18 +658,18 @@ li a:hover {
   </style>
   </head>
   <body>
-  	<div>
-  	<ul>
-  		<li><a  href="t.html">Description</a></li>
-      <li><a  href="t1.html">Polynomial</a></li>
-      <li><a  href="">About US</a></li>
-  	</ul>
+    <div>
+    <ul>
+      <li><a  href="t.html">Description</a></li>
+      <li><a  href="t2.html">Polynomial</a></li>
+      <li><a  href="t3.html">1 bit error</a></li>
+    </ul>
   </div>
 
 
   <div style="clear:both"></div>
    <div>
-  	<br>
+    <br>
   </div>
     <h1 align="center">Cyclic Redundancy Check</h1>
 
@@ -671,12 +680,12 @@ li a:hover {
     <div style="float:left; width: 50%">
     <h2 align="center">Generator</h2>
     <form name="form1">
-    	Binary coefficients: <input type="number" name="Binary" id="i0" onkeydown="keytest()"> &nbsp;  &nbsp;  &nbsp;
-    	Divisor:<input type="number" name="divisor" id="i1">
-    	<br><br><br>
-    	polynomial :&nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;   &nbsp; <input type="number" name="polynomial" id="i2"> &nbsp;  &nbsp;  &nbsp;
-    	Divisor: <input type="number" name="divisor2" id="i3">
-    	<br><br><br><input type="button" value="submit" onclick="buttonClick()">
+      Binary coefficients: <input type="number" name="Binary" id="i0" onkeydown="keytest()"> &nbsp;  &nbsp;  &nbsp;
+      Divisor:<input type="number" name="divisor" id="i1">
+      <br><br><br>
+      polynomial :&nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;   &nbsp; <input type="number" name="polynomial" id="i2"> &nbsp;  &nbsp;  &nbsp;
+      Divisor: <input type="number" name="divisor2" id="i3">
+      <br><br><br><input type="button" value="submit" onclick="buttonClick()">
      <br><br>
      <br>
      <p id="g"></p>
@@ -708,5 +717,5 @@ li a:hover {
 
 
 
-  	</body>
+    </body>
 </html>
