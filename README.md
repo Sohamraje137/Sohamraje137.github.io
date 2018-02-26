@@ -1,5 +1,5 @@
 # Cyclic-Redundancy-Check
-<br />
+
 ## Question no. A. 7.
 <br />
 
