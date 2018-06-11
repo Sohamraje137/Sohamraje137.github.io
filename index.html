@@ -1,519 +1,415 @@
 <!DOCTYPE html>
 <html>
-<title>OS Simulator</title>
+<title>trekko</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
-body, html {
-    height: 100%;
-    color: #777;
-    line-height: 1.8;
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise" rel="stylesheet" type="text/css"/>
+  
+
+<link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">  
+     <style>
+
+#myFooter {
+    background-color: #3c3d41;
+    color: white;
+    padding-top: 30px;
 }
-/* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3 {
+
+#myFooter .footer-copyright {
+    background-color: #333333;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: center;
+}
+
+#myFooter .row {
+    margin-bottom: 60px;
+}
+
+#myFooter .navbar-brand {
+    margin-top: 45px;
+    height: 65px;
+}
+
+#myFooter .footer-copyright p {
+    margin: 10px;
+    color: #ccc;
+}
+
+#myFooter ul {
+    list-style-type: none;
+    padding-left: 0;
+    line-height: 1.7;
+}
+
+#myFooter h5 {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+#myFooter h2 a{
+    font-size: 50px;
+    text-align: center;
+    color: #fff;
+}
+
+#myFooter a {
+    color: #d2d1d1;
+    text-decoration: none;
+}
+
+#myFooter a:hover,
+#myFooter a:focus {
+    text-decoration: none;
+    color: white;
+}
+
+#myFooter .social-networks {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 16px;
+}
+
+#myFooter .social-networks a {
+    font-size: 32px;
+    color: #f9f9f9;
+    padding: 10px;
+    transition: 0.2s;
+}
+
+#myFooter .social-networks a:hover {
+    text-decoration: none;
+}
+
+#myFooter .facebook:hover {
+    color: #0077e2;
+}
+
+#myFooter .google:hover {
+    color: #ef1a1a;
+}
+
+#myFooter .twitter:hover {
+    color: #00aced;
+}
+
+#myFooter .btn {
+    color: white;
+    background-color: #d84b6b;
+    border-radius: 20px;
+    border: none;
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    line-height: 25px;
+}
+
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #e0e0e0;
+  color: black;
+}
+
+.active {
+  background-color: lavender;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 400px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 767px) {
+    #myFooter {
+        text-align: center;
+    }
+}
+body {font-family: "Lato", sans-serif}
+.mySlides  {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-/* First image (Logo. Full height) */
-.bgimg-1 {
-    background-image:url("https://safebytes.com/wp-content/uploads/2016/10/OperatingSystem-min.jpg");
     min-height: 100%;
 }
-/* Second image (Portfolio) */
-.bgimg-2 {
-    background-image: url("http://www.youthincmag.com/wp-content/uploads/2017/04/best-books-book-youll-ever-read.jpg");
-    min-height: 400px;
-}
-/* Third image (Contact) */
-.bgimg-3 {
-    background-image: url("http://www.expresspros.co.za/wp-content/uploads/2015/09/7er_Team_Meditrainment.png");
-    min-height: 400px;
-}
-.w3-wide {letter-spacing: 10px;}
-.w3-hover-opacity {cursor: pointer;}
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1024px) {
-    .bgimg-1, .bgimg-2, .bgimg-3 {
-        background-attachment: scroll;
-    }
-}
- .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
-}
-.title {
-  color: grey;
-  font-size: 18px;
-}
-button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-}
-a {
-  text-decoration: none;
-  font-size: 22px;
-  color: black;
-}
-button:hover, a:hover {
-  opacity: 0.7;
-}
-#myNavbar a
-{
-	color:white;
-/*	background-color: black;
-*/}
 
-.images img{
-  height: 150px;
+.myButton {
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
 }
+.myButton:hover {
+    opacity:1;
+}
+
+.soham{
+    cursor: pointer;
+    width : 200px;
+    height: 40px;
+    opacity: :1.0;
+    background-color: orange;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 5px;
+}
+}
+
+        
 </style>
 <body>
 
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar" id="myNavbar">
-    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
-      <i class="fa fa-bars"></i>
-    </a>
-    <a href="#home" class="w3-bar-item w3-button">HOME</a>
-    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> Details About Topics</a>
-    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> Topics</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> Team members</a>
+<div class="topnav" id="myTopnav">
+  <a href="#" style="background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);">
+    <span class="glyphicon glyphicon-tree-conifer"></span>Trekko </a>
 
-  </div>
+  <a href="#news">Blog</a>
 
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT Topics</a>
-    <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">Topics</a>
-    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">Team members</a>
+  <a href="#">Tour Package</a>
 
-  </div>
-</div>
+  <a href="#contact">Contact</a>
+  
+  <a href="#about">About</a>
+  
+    <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i>
+    </button>     
+      
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      
+        <a href="#" class="w3-bar-item w3-button">RENTALS</a>
+      
+        <a href="#" class="w3-bar-item w3-button">MEDIA</a>
+      
+        <a href="#" class="w3-bar-item w3-button">EXTRAS</a>
+      
+      </div> 
 
-<!-- First Parallax Image with Logo Text -->
-<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
-  <div class="w3-display-middle" style="white-space:nowrap;">
-    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity"><span class="w3-hide-small">OS</span> SIMULATOR 2K18</span>
-  </div>
-</div>
-
-<!-- Container (About Section) -->
-<div class="w3-content w3-container w3-padding-64" id="about">
-  <h3 class="w3-center">ABOUT Topics</h3>
-  <p class="w3-center"><em>Some of the topics are shown here with Short Description.</em></p>
-
-  <!--about 1st topic-->
-  <div class="w3-row">
-    <div class="w3-col m6 w3-center w3-padding-large">
-      <p><b><i class="fa fa-user w3-margin-right"></i><strong style="font-size: 25px">Disc Scheduling</strong></b></p><br>
-      <img src="http://www.cs.iit.edu/~cs561/cs450/disksched/fcfs.bmp" alt="Photo of Me" width="500" height="333">
-    </div>
-    <!-- Hide this text on small devices -->
-    <div class="w3-col m6 w3-hide-small w3-padding-large">
-      <p>Explaination For the  topic 1 given here........line num: 134</p>
-    </div>
-  </div>
-
-  <!--2nd topic-->
-   <div class="w3-row">
-     <div class="w3-col m6 w3-center w3-padding-large">
-      <p><b><i class="fa fa-user w3-margin-right"></i><strong style="font-size: 25px">File Allocation</strong></b></p><br>
-      <img src="https://cdn-images-1.medium.com/max/670/1*wPqqYFfNreXF4INrNhYkeQ.jpeg" alt="Photo of Me" width="500" height="333">
-    </div>
-
-    <div class="w3-col m6 w3-hide-small w3-padding-large" align="w3-right">
-      <p>In this the different File aloocation strategies are examined.It contains 3 strategies namely: </p>
-      	<li>
-      		<strong style="font-family: inherit;">Sequential Allocation</strong><br>  </li>
-       <li>      		<strong style="font-family: inherit;">Indexed Allocation</strong><br> </li>
-      	<li>	<strong style="font-family: inherit;">Linked Allocation</strong><br>
-      	</li>
-
-    </div>
-  </div>
-
-  <!--3rd topic-->
-   <div class="w3-row">
-     <div class="w3-col m6 w3-center w3-padding-large">
-      <p><b><i class="fa fa-user w3-margin-right"></i><strong style="font-size: 25px">Deadlock</strong></b></p><br>
-      <img src="https://cs.nyu.edu/courses/spring03/V22.0202-002/figs/resource-alloc.png" align="left" alt="Photo of Me" width="500" height="333">
-    </div>
-
-    <div class="w3-col m6 w3-hide-small w3-padding-large">
-      <p>Explaination For the topic 3 given here........line num: 158</p>
-    </div>
-  </div>
-  <!--4th topic-->
-   <div class="w3-row">
-     <div class="w3-col m6 w3-center w3-padding-large">
-      <p><b><i class="fa fa-user w3-margin-right"></i><strong style="font-size: 25px">Process Scheduling</strong></b></p><br>
-      <img src="https://www.tutorialspoint.com/operating_system/images/queuing_diagram.jpg" align="left" alt="Photo of Me" width="500" height="333">
-    </div>
-
-    <div class="w3-col m6 w3-hide-small w3-padding-large">
-      <p>Explaination For the topic 4 given here........line num: 169</p>
-    </div>
-  </div>
-
-  <div class="w3-row">
-     <div class="w3-col m6 w3-center w3-padding-large">
-      <p><b><i class="fa fa-user w3-margin-right"></i><strong style="font-size: 25px">Client-Server Communication</strong></b></p><br>
-      <img src="https://cdn.tutsplus.com/gamedev/uploads/2013/08/img1_server_client.png" align="left" alt="Photo of Me" width="500" height="333">
-    </div>
-
-    <div class="w3-col m6 w3-hide-small w3-padding-large">
-      <p>
-        Clients and servers exchange messages in a request–response messaging pattern.
-        The client sends a request, and the server returns a response. This exchange
-        of messages is an example of inter-process communication.
-
-        <br><br>Since there is not much simulation involved in demonstrating the
-        communication, we have added animated videos to aid in understanding the concepts.
-
-        <br><br>More About Client-Server Communication is on the link provided in the "Topics" section
-      </p>
-    </div>
-  </div>
-<!--topic 6-->
- <div class="w3-row">
-     <div class="w3-col m6 w3-center w3-padding-large">
-      <p><b><i class="fa fa-user w3-margin-right"></i><strong style="font-size: 25px">Synchronization</strong></b></p><br>
-      <img src="https://www.sapling-inc.com/blog/wp-content/uploads/2012/07/GettyImages_85406496.jpg" align="left" alt="Photo of Me" width="450" height="330">
-    </div>
-
-    <div class="w3-col m6 w3-hide-small w3-padding-large">
-      <p>Process Synchronization means sharing system resources by processes in a such a way that</p>
-	    <p>Concurrent access to shared data is handled thereby minimizing the chance of inconsistent data</p>
-	    <p>Maintaining data consistency demands mechanisms to ensure synchronized execution of cooperating processes.</p>    
-	    <p>There are five problems implemented here </p>    
-	 <li>
-      		<strong style="font-family: inherit;">Producer Consumer</strong><br>  </li>
-       <li>      		<strong style="font-family: inherit;">Reader writer</strong><br> </li>
-      	<li>	<strong style="font-family: inherit;">Barrier Problem</strong><br>
-      	</li>
-	     <li>
-      		<strong style="font-family: inherit;">Dining Philosopher</strong><br>  </li>
-	     <li>
-      		<strong style="font-family: inherit;">Sleeping Barber</strong><br>  </li>
-	 </div>
-  </div>
-
-   <div class="w3-row">
-     <div class="w3-col m6 w3-center w3-padding-large">
-      <p><b><i class="fa fa-user w3-margin-right"></i><strong style="font-size: 25px">Page Allocation</strong></b></p><br>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Page_table_actions.svg/440px-Page_table_actions.svg.png" align="left" alt="page alloc" width="450" height="330">
-    </div>
-
-    <div class="w3-col m6 w3-hide-small w3-padding-large">
-      <p>Explaination For the topic 3 given here........line num: 214</p>
-    </div>
-  </div>
-
-  <div class="w3-row">
-     <div class="w3-col m6 w3-center w3-padding-large">
-      <p><b><i class="fa fa-user w3-margin-right"></i><strong style="font-size: 25px">MFT and MVT</strong></b></p><br>
-      <img src="http://www.cs.nott.ac.uk/~pszgxk/courses/g53ops/images/OS-MFT.jpg" align="left" alt="page alloc" width="450" height="330">
-    </div>
-
-    <div class="w3-col m6 w3-hide-small w3-padding-large">
-      <h4>Multiprogramming with Fixed Tasks (MFT)</h4>
-      <ul>
-      <li>Memory is divided into several fixed-size partitions</li>
-      <li>Each partition may contain exactly one process/task</li>
-      </ul>
-      <h4>Multiprogramming with Variable Tasks (MVT)</h4>
-      <ul>
-      <li>Partitions of variable length and number</li>
-      <li>When a process is brought into main memory, it is allocated exactly as much memory as it requires</li>
-      </ul>
-    </div>
-  </div>
-
+  <ul class="nav navbar-nav navbar-right">
+  
+      <li><a href="#" style="background:"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+  
+      <li><a href="#" style="background:;"><span class="glyphicon glyphicon-log-in"></span> Login  </a></li>
+  
+  </ul>
+  
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 
 </div>
 
-<!-- <div class="w3-row w3-center w3-dark-grey w3-padding-16">
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">14+</span><br>
-    Server-Client
-  </div>
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">55+</span><br>
-    Deadlocks
-  </div>
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">89+</span><br>
-   File allocation
-  </div>
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">150+</span><br>
-    Disk Scheduling
-  </div>
+<!-- Navbar on small screens -->
+<!-- <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+    <a href="" class="w3-bar-item w3-button w3-padding-large">ABOUT US</a>
+  <a href="" class="w3-bar-item w3-button w3-padding-large">TOUR PACKAGES</a>
+  <a href="" class="w3-bar-item w3-button w3-padding-large">CONTACT</a>
+  <a href="" class="w3-bar-item w3-button w3-padding-large">MORE</a>
+      <a href="" class="w3-bar-item w3-button w3-padding-large">Sign Up</a>
+  <a href="" class="w3-bar-item w3-button w3-padding-large">Login</a>
 </div> -->
+    
+    
+    
+    
+    
+    
+<img class="mySlides" src="images/1.jpg"width=100% height="550px">
+<img class="mySlides" src="images/9.jpg"width=100% height="550px">
+<img class="mySlides" src="images/seven.jpg"width=100% height="550px">
+<img class="mySlides" src="images/8.jpg"width=100% height="550px">
+    
+<button class="w3-button w3-display-left w3-jumbo" onclick="plusDivs(-1)">&#10094;</button>
+<button class="w3-button w3-display-right w3-jumbo" onclick="plusDivs(+1)">&#10095;</button>
+    
+    
 
-<!-- Second Parallax Image with Portfolio Text -->
-<div class="bgimg-2 w3-display-container w3-opacity-min">
-  <div class="w3-display-middle">
-    <span class="w3-xxlarge w3-text-white w3-wide">TOPICS</span>
-  </div>
+    
+    
+    
+
+    
+    
+   <!--  C:\Users\Soham\AppData\Local\Temp
+     -->
+    
+    
+    
+    <p>r</p>
+    <p>r</p>
+    <p>r</p>
+    <p>r</p>
+    <p>r</p>
+    <p>r</p>
+    <p>r</p>
+    <p>r</p>
+    <p>r</p>
+    <p>r</p>
+    <p>r</p>
+    <p>r</p>
+    <p>r</p>
+<div>
+<a class="soham" href="testex.html">Review</button>
+</a>
 </div>
+    
 
-<!-- Container (Portfolio Section) -->
-<div class="w3-content w3-container w3-padding-64" id="portfolio">
-  <h3 class="w3-center">Below are the topics to SIMULATE</h3>
-  <p class="w3-center"><em>Here are the essential topics<br> Click on the images to simulate the respective topic</em></p><br>
 
-  <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-  <div class="images">
-  <div class="w3-row-padding w3-center">
-    <div class="w3-col m3">
-      		<p><strong>Process Scheduling</strong></p>
-      <a href="simulator_home/Scheduling/index.html"> <img src="https://www.colourbox.com/preview/2225350-people-standing-one-after-another-before-the-closed-door.jpg" style="width:120px" class="w3-hover-opacity" alt="Process Scheduling"></a>
-    </div>
-
-     <div class="w3-col m3">
-      		<p><strong>Deadlocks</strong></p>
-      <a href="simulator_home/Deadlock/index.html"> <img src="http://108.61.119.12/wp-content/uploads/2014/05/Gridlock.svg_.png" style="width:100px " class="w3-hover-opacity" alt="Deadlocks"></a>
-    </div>
-
-    <div class="w3-col m3">
-      		<p><strong>Disc Scheduling</strong></p>
-      <a href="simulator_home/disk/disk_scheduling.html"> <img src="http://www.programering.com/images/remote/ZnJvbT1jbmJsb2dzJnVybD1uQm5hdWdUWWpKak56UTJNd0lHTTJVR1oySTJNakZHTmtWR016WVdaNE16WTNJVFl0RURNd0V6TnhVVE12Y0RNekVETXk4eU4xa3pOMTh5WnZ4bVl2MDJiajV5WnZ4bVkwbG1iajV5Y2xkV1l0bDJMdm9EYzBSSGE.jpg" style="width:140px " class="w3-hover-opacity" alt="disc Scheduling"></a>
-    </div>
-
-    <div class="w3-col m3">
-      		<p><strong>Client-Server Communication</strong></p>
-      <a href="simulator_home/Server-Client-Comm/cli_ser.html"> <img src="http://www.alhutaib.com/wp-content/uploads/2017/02/networking.jpg" style="width:140px " class="w3-hover-opacity" alt="Server-client"></a>
-    </div>
-
-    <div class="w3-col m3">
-          <p><strong>Synchronization</strong></p>
-      <a href="simulator_home/Syncronization/index.html"> <img src="https://www.handybackup.net/images/icons/synchronize-folders-200.png" style="width:100px " class="w3-hover-opacity" alt="file allocation"></a>
-    </div>
-
-    <div class="w3-col m3">
-          <p><strong>MFT and MVT</strong></p>
-      <a href="simulator_home/memory/index.html"> <img src="http://arcbotics.com/wp-content/uploads/2016/09/21.Memory-management-250x250.png" style="width:150px " class="w3-hover-opacity" alt="Memory Management(MFT and MVT)"></a>
-    </div>
-
-     <div class="w3-col m3">
-          <p><strong>Page allocation</strong></p>
-      <a href="simulator_home/OS-final/index.html"> <img src="http://www.naisp.net/koconnor/htmlclass/images/12-1-frameset.gif" style="width:120px " class="w3-hover-opacity" alt="file allocation"></a>
-    </div>
-
-    <div class="w3-col m3">
-          <p><strong>File allocation</strong></p>
-      <a href="simulator_home/file-allocation/Index page/index._page.html"> <img src="https://cdn-images-1.medium.com/max/670/1*wPqqYFfNreXF4INrNhYkeQ.jpeg" style="width:220px " class="w3-hover-opacity" alt="file allocation"></a>
-    </div>
-
+    <footer id="myFooter">
+        
+        <div class="container">
+        
+            <div class="row">
+        
+                <div class="col-sm-3">
+        
+                    <h2 class="logo"><a href="#"> TREKKO </a></h2>
+        
+                </div>
+        
+                <div class="col-sm-2">
+        
+                    <h5>Get started</h5>
+        
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Sign up</a></li>
+                        <li><a href="#">Downloads</a></li>
+                    </ul>
+        
+                </div>
+        
+                <div class="col-sm-2">
+        
+                    <h5>About us</h5>
+        
+                    <ul>
+                        <li><a href="#">Company Information</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Reviews</a></li>
+                    </ul>
+        
+                </div>
+        
+                <div class="col-sm-2">
+        
+                    <h5>Support</h5>
+        
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help desk</a></li>
+                        <li><a href="#">Forums</a></li>
+                    </ul>
+        
+                </div>
+        
+                <div class="col-sm-3">
+        
+                    <div class="social-networks">
+        
+                        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+                    </div>
+        
+                    <button type="button" class="btn btn-default">Contact us</button>
+        
+                </div>
+        
+            </div>
+       
+        </div>
+       
+        <div class="footer-copyright">
+       
+            <p>© 2018 Trekko.com All rights reserved </p>
+       
+        </div>
+    
+    </footer>
+  <!--   
+    
+    <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+  <a href="index.html" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+      <a href="https://www.facebook.com" title="fb page" target="_blank" class="w3-hover-text-green"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
   </div>
-  </div>
-</div>
+</footer> -->
+ 
 
-<!-- Modal for full size images on click-->
-<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
-  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-    <img id="img01" class="w3-image">
-    <p id="caption" class="w3-opacity w3-large"></p>
-  </div>
-</div>
-
-<!-- Third Parallax Image with Portfolio Text -->
-<div class="bgimg-3 w3-display-container w3-opacity-min">
-  <div class="w3-display-middle">
-     <span class="w3-xxlarge w3-text-black w3-wide">TEAM MEMBERS</span>
-  </div>
-</div>
-<!--
-<div class="w3-content w3-container w3-padding-64" id="contact">
-  <h3 class="w3-center">NITK, Surathkal</h3>
-  <p class="w3-center"><em>I'd love your feedback!</em></p>
-  <h2 style="text-align:center">User Profile Card</h2>
-	<div class="card">
-	  <img src="/w3images/team2.jpg" alt="samyak" style="width:100%">
-	  <h1>Samyak Jain</h1>
-	  <p class="title">16CO254,CSE</p>
-	  <p>NITK</p>
-	  <div style="margin: 24px 0;">
-	    <a href="#"><i class="fa fa-dribbble"></i></a>
-	    <a href="#"><i class="fa fa-twitter"></i></a>
-	    <a href="#"><i class="fa fa-linkedin"></i></a>
-	    <a href="#"><i class="fa fa-facebook"></i></a>
-	 </div>
-	 <p><button>Contact</button></p>
-	 </div>
-
-</div>-->
-
-
-
-<div class="w3-container" style="padding:128px 16px" id="contact">
-  <h3 class="w3-center">THE TEAM</h3>
-  <p class="w3-center w3-large">OS simulator developed by:</p>
-  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="/w3images/team2.jpg" alt="samyak " style="width:100%">
-        <div class="w3-container">
-          <h3>Samyak jain</h3>
-          <p class="w3-opacity">16CO254<br>NITK</p>
-          <p>The portion of simulator implemented are :Non Contiguous memory Management  </p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
-        </div>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="/w3images/team1.jpg" alt="Soham" style="width:100%">
-        <div class="w3-container">
-          <h3>Soham patil</h3>
-          <p class="w3-opacity">16CO249<br>NITK</p>
-          <p>The portion of simulator implemented are :Syncronisation  </p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
-        </div>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="C:\Users\kushal yadav\Pictures\IMG_20171110_184718-01-04 (2).jpeg" alt="Tushar" style="width:100%">
-        <div class="w3-container">
-          <h3>Tushar T.D.M</h3>
-          <p class="w3-opacity">16CO251<br>NITK</p>
-          <p>The portion of simulator implemented are : Disk Scheduling </p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
-        </div>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="C:\Users\kushal yadav\Pictures\IMG_20171110_184718-01-04 (2).jpeg" alt="Tushar" style="width:100%">
-        <div class="w3-container">
-          <h3>Tejaskumar K</h3>
-          <p class="w3-opacity">16CO250<br>NITK</p>
-          <p>The portion of simulator implemented are :Non Contiguous memory Management   </p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
-        </div>
-      </div>
-    </div>
-     <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="C:\Users\kushal yadav\Pictures\IMG_20171110_184718-01-04 (2).jpeg" alt="Shiva" style="width:100%">
-        <div class="w3-container">
-          <h3>Shiva</h3>
-          <p class="w3-opacity">16CO252<br>NITK</p>
-          <p>The portion of simulator implemented are :File Allocation Methods  </p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
-        </div>
-      </div>
-    </div>
-	  <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="C:\Users\kushal yadav\Pictures\IMG_20171110_184718-01-04 (2).jpeg" alt="Chetana Vasali" style="width:100%">
-        <div class="w3-container">
-          <h3>Chetana Vasali</h3>
-          <p class="w3-opacity">16CO255<br>NITK</p>
-          <p>The portion of simulator implemented are : Process Scheduling </p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
-        </div>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="https://www.w3schools.com/w3images/team5.jpg" alt="Rithesh" style="width:100%">
-        <div class="w3-container">
-          <h3>Rithesh</h3>
-          <p class="w3-opacity">16CO252<br>NITK</p>
-          <p>Implemented: <strong>Client-Server Communication</strong> </p>
-        <button class="w3-button w3-light-grey w3-block" type="submit"><i class="fa fa-envelope"></i> Contact</button>
-         </form></p>
-        </div>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="https://www.w3schools.com/w3images/team5.jpg" alt="ShashankP" style="width:100%">
-        <div class="w3-container">
-          <h3>Shashank P</h3>
-          <p class="w3-opacity">16CO247<br>NITK</p>
-          <p>Implemented: <strong>MFT and MVT</strong> </p>
-        <button class="w3-button w3-light-grey w3-block" type="submit"><i class="fa fa-envelope"></i> Contact</button>
-         </form></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
- <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="/w3images/team1.jpg" alt="Shashank" style="width:100%">
-        <div class="w3-container">
-          <h3>Shashank Kumar</h3>
-          <p class="w3-opacity">16CO246<br>NITK</p>
-          <p>The portion of simulator implemented are :Deadlock  </p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
-        </div>
-      </div>
-    </div>
-
-<!-- Footer -->
-<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
-  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-  <p>By <a href="https://www.w3schools.com/w3css/default.asp" title="CSE" target="_blank" class="w3-hover-text-green">CSE 2018</a></p>
-</footer>
-
-<!-- Add Google Maps -->
 <script>
-function myMap()
-{
-  myCenter=new google.maps.LatLng(41.878114, -87.629798);
-  var mapOptions= {
-    center:myCenter,
-    zoom:12, scrollwheel: false, draggable: false,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
-  var marker = new google.maps.Marker({
-    position: myCenter,
-  });
-  marker.setMap(map);
-}
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
-// Change style of navbar on scroll
+
 window.onscroll = function() {myFunction()};
 function myFunction() {
     var navbar = document.getElementById("myNavbar");
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-black";
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
     } else {
         navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
     }
 }
+
 // Used to toggle the menu on small screens when clicking on the menu button
 function toggleFunction() {
     var x = document.getElementById("navDemo");
@@ -523,12 +419,48 @@ function toggleFunction() {
         x.className = x.className.replace(" w3-show", "");
     }
 }
+    
+    
+    
+    
+    //frontend
+        var slideIndex = 1;
+manual(slideIndex);
+
+function plusDivs(n) {
+    manual(slideIndex += n);
+}
+
+function manual(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    if (n > x.length) {slideIndex = 1} 
+    if (n < 1) {slideIndex = x.length} ;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none"; 
+    }
+    x[slideIndex-1].style.display = "block"; 
+}
+    
+    
+    
+    
+    
+    var slideIndex = 0;
+automatic();
+
+function automatic() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none"; 
+    }
+    slideIndex++;
+    if (slideIndex > x.length) {slideIndex = 1} 
+    x[slideIndex-1].style.display = "block"; 
+    setTimeout(automatic, 3000); 
+}
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
-<!--
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
 
 </body>
 </html>
