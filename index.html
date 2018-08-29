@@ -1,629 +1,367 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-<title>Trekko</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-<link href="https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise" rel="stylesheet" type="text/css"/>
-  
-
-<link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">  
-     <style>
-
-#myFooter {
-    background-color: #3c3d41;
-    color: white;
-    padding-top: 30px;
-}
-
-#myFooter .footer-copyright {
-    background-color: #333333;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    text-align: center;
-}
-
-#myFooter .row {
-    margin-bottom: 60px;
-}
-
-#myFooter .navbar-brand {
-    margin-top: 45px;
-    height: 65px;
-}
-
-#myFooter .footer-copyright p {
-    margin: 10px;
-    color: #ccc;
-}
-
-#myFooter ul {
-    list-style-type: none;
-    padding-left: 0;
-    line-height: 1.7;
-}
-
-#myFooter h5 {
-    font-size: 18px;
-    color: white;
-    font-weight: bold;
-    margin-top: 30px;
-}
-
-#myFooter h2 a{
-    font-size: 50px;
-    text-align: center;
-    color: #fff;
-}
-
-#myFooter a {
-    color: #d2d1d1;
-    text-decoration: none;
-}
-
-#myFooter a:hover,
-#myFooter a:focus {
-    text-decoration: none;
-    color: white;
-}
-
-#myFooter .social-networks {
-    text-align: center;
-    padding-top: 30px;
-    padding-bottom: 16px;
-}
-
-#myFooter .social-networks a {
-    font-size: 32px;
-    color: #f9f9f9;
-    padding: 10px;
-    transition: 0.2s;
-}
-
-#myFooter .social-networks a:hover {
-    text-decoration: none;
-}
-
-#myFooter .facebook:hover {
-    color: #0077e2;
-}
-
-#myFooter .google:hover {
-    color: #ef1a1a;
-}
-
-#myFooter .instagram:hover {
-    color: #ef1a10;
-}
-
-#myFooter .btn {
-    color: white;
-    background-color: #d84b6b;
-    border-radius: 20px;
-    border: none;
-    width: 150px;
-    display: block;
-    margin: 0 auto;
-    margin-top: 10px;
-    line-height: 25px;
-}
-
-@media screen and (max-width: 767px) {
-    #myFooter {
-        text-align: center;
-    }
-}
-body {font-family: "Lato", sans-serif}
-.mySlides  {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 100%;
-    overflow: visible;
-}
-
-.myButton {
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    opacity: 0.9;
-}
-.myButton:hover {
-    opacity:1;
-}
-
-.soham{
-    cursor: pointer;
-    width : 200px;
-    height: 40px;
-    opacity: :1.0;
-    background-color: orange;
-    border: none;
-    color: black;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 10px 5px;
-}
-}
-
-
-/*      quotes slideshow
-*/
-.mySlides_quotes {
-  display: none;
-  padding-bottom: 80px;
-  text-align: center;
-
-}
-q {font-style: italic;}
-
-/* Add a blue color to the author */
-.author {color: cornflowerblue;}  
-</style>
-<body>
-
-   <nav class="navbar-default navbar-fixed-top">
-  <div class="container-fluid" style="background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header" >
-      <button  type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only" >Toggle navigation</span>
-             </button>
-      <a class="navbar-brand" href="#">Trekko</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="secondpages/Team.html">Team</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Places <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="secondpages/Kodachadri.html">Kodachadri</a></li>
-            <li><a href="secondpages/Krunjal.html">Kruinjal</a></li>
-            <li><a href="secondpages/Agumbe.html">Agumbe</a></li>
-          
-          </ul>
-        </li>
-      </ul>
-     
-     <!--  <a href="#" style="float: right"> Sign Up</a>
-  
-      <a href="#" style="float: right;"><span class="glyphicon glyphicon-log-in"></span> Login  </a>
-   -->
-
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login </a></li>
-
-       
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-  
-    <br>
-    <br>
-  <!--     
-<div class="topnav " id="myTopnav">
-  <button href="../index.html" style="background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);">
-    <span class="glyphicon glyphicon-tree-conifer"></span>Trekko </button>
-
-
-    <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" >
-     Places
-  </button>
-  <div class="dropdown-menu topnav " aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-    <a href="Blog.html">Blog</a>
-
-  <a href="#about">About</a>
-  
-  
-      <a href="#" style="float: right"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
-  
-      <a href="#" style="float: right;"><span class="glyphicon glyphicon-log-in"></span> Login  </a>
-  
-
-  
-  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-
-</div>
-
- -->
-<!-- Navbar on small screens -->
-<!-- <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-    <a href="" class="w3-bar-item w3-button w3-padding-large">ABOUT US</a>
-  <a href="" class="w3-bar-item w3-button w3-padding-large">TOUR PACKAGES</a>
-  <a href="" class="w3-bar-item w3-button w3-padding-large">CONTACT</a>
-  <a href="" class="w3-bar-item w3-button w3-padding-large">MORE</a>
-      <a href="" class="w3-bar-item w3-button w3-padding-large">Sign Up</a>
-  <a href="" class="w3-bar-item w3-button w3-padding-large">Login</a>
-</div> -->
-    
-    
-    
-    
-    
-    <div class="w3-display-container w3-light-grey">
-<img class="mySlides" src="images/1.jpg" width=100% height="550px">
-<img class="mySlides" src="images/9.jpg" width=100% height="550px">
-<img class="mySlides" src="images/seven.jpg" width=100% height="550px">
-<img class="mySlides" src="images/8.jpg" width=100% height="550px">
- 
-
- <div class="slideshow-container" align="center" >
-
-<div class="mySlides_quotes">
-  <q>I love you the more in that I believe you had liked me for my own sake and for nothing else</q>
-  <p class="author">- John Keats</p>
-</div>
-
-<div class="mySlides_quotes">
-  <q>But man is not made for defeat. A man can be destroyed but not defeated.</q>
-  <p class="author">- Ernest Hemingway</p>
-</div>
-
-<div class="mySlides_quotes">
-  <q>I have not failed. I've just found 10,000 ways that won't work.</q>
-  <p class="author">- Thomas A. Edison</p>
-</div>
-
-
-</div>
-
-<button class="w3-button w3-display-left   w3-display-hover  w3-circle" onclick="plusDivs(-1)">&#10094;</button>
-<button class="w3-button w3-display-right w3-display-hover w3-circle" onclick="plusDivs(+1)">&#10095;</button>
-    </div>
-    <br>
-    <br>
-
-    
-
-        <div style="background-color: #ebeced">
-    <div class="row" >
-      
-      <div class="col-xs-12 col-sm-3 col-lg-2">
-        
-
-      </div>
-     <div class="col-sm-8 col-lg-8 col-xs-12" >
-      <div class="col-xs-12 col-sm-2 col-lg-2">
-        <h4 .Sub-head >Trekko</h4>
-        <h4> offers You</h4>
-      </div>  
-    
-        <div class="col-lg-3 col-sm-2 col-xs-12">
-        <div class="row">
-          <div class="col-lg-2 col-sm-2 col-xs-2">
-              <span class="glyphicon glyphicon-picture"  style="font-size:19px ; color: orange; margin-top: 25px ;margin-left: 10px" align: center></span>
-          </div>
-        <div class="col-lg-10 col-xs-10">
-        <h4>Exploring Places</h4>
-          <p>Some written text</p>
-        </div>  
-
-      </div>
-    </div>
-        <div class="col-lg-3 col-sm-2 col-xs-12">
-        <div class="row">
-          <div class="col-lg-2 col-sm-2 col-xs-2">
-              <span class="glyphicon glyphicon-tags"  style="font-size:19px ; color: orange; margin-top: 25px ;margin-left: 10px" align: center></span>
-          </div>
-        <div class="col-lg-10 col-xs-10">
-        <h4>Easy Booking</h4>
-          <p>Some written text</p>
-        </div>  
-
-      </div>
-    </div>
-
-     <div class="col-lg-3 col-sm-2 col-xs-12">
-        <div class="row">
-          <div class="col-lg-2 col-sm-2 col-xs-2">
-              <span class="glyphicon glyphicon-user"  style="font-size:19px ; color: orange; margin-top: 23px ;margin-left: 10px" align: center></span>
-          </div>
-        <div class="col-lg-10 col-xs-10">
-        <h4>Great Guides</h4>
-          <p>Some written text</p>
-        </div>  
-      </div>
-    </div>
-     
-      </div>
-    
-
-      </div> 
-
-    </div>
-    <br>
-    <br>
-    <div class="container">
-      <div class="row">
-      
-  <!--      <div class="col-xs-12 col-sm-1 col-lg-1">
-         
-       </div>
-       -->
-      
-       <div class="col-xs-12 col-sm-4 col-lg-4">
-      
-          <a href="secondpages/Kodachadri.html"  >
-           <div class="card img-fluid" style="width:100%;height: 100%;">
-      
-              <img class="card-img-top" src="images/Kodachadri.jpg" alt="Card image" style="width:100%;height: 260px">
-      
-              <div class="card-img-overlay" >
-      
-               <div style="bottom:0px;position:absolute;color:white">
-      
-      
-               
-
-              </div>
-      
-              </div>
-      
-            </div>
-                </a>
-
-      
-       </div>
-        <div class="col-xs-12 col-sm-4 col-lg-4">
-            
-          <a href="secondpages/Krunjal.html" >
-  
-           <div class="card img-fluid" style="width:100%;height: 100%;">
-      
-              <img class="card-img-top" src="images/Kurinjal.jpg" alt="Card image" style="width:100%;height: 260px">
-      
-              <div class="card-img-overlay" >
-      
-               <div style="bottom:0px;position:absolute;color:white">
-      
-                
-      
-      
-              </div>
-      
-              </div>
-      
-            </div>
-
-          </a>
-      
-       </div>
-         <div class="col-xs-12 col-sm-4 col-lg-4">
-            
-          <a href="secondpages/Agumbe.html" >
-  
-           <div class="card img-fluid" style="width:100%;height: 100%;">
-      
-              <img class="card-img-top" src="images/Agumbe.jpeg" alt="Card image" style="width:100%;height: 260px">
-      
-              <div class="card-img-overlay" >
-      
-               <div style="bottom:0px;position:absolute;color:white">
-      
-                
-      
-      
-              </div>
-      
-              </div>
-      
-            </div>
-
-          </a>
-      
-       </div>
-    
-    </div>
- 
-</div>
- <br>
- <br>
- <br>
-
-    
-    
-   <!--  C:\Users\Soham\AppData\Local\Temp
-     -->
-    
-    
-    
-<br><br>
-<br>
-<br>
-</div>
-    
-
-
-    <footer id="myFooter">
-        
-        <div class="container">
-        
-            <div class="row">
-        
-                <div class="col-sm-3">
-        
-                    <h2 class="logo"><a href="#"> TREKKO </a></h2>
-        
-                </div>
-        
-                 <div class="col-sm-2">
-        
-                    <h5>Get started</h5>
-        
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Sign up</a></li>
-                    </ul>
-        
-                </div>
-        
-                <div class="col-sm-2">
-        
-                    <h5>About us</h5>
-        
-                    <ul>
-                        <li><a href="#">Company Information</a></li>
-
-
-                        <li>   <a href="mailto:sohampatil798@gmail.com" rel="nofollow">Mail Us </a></li>
-                        <li><a href="secondpages/Team.html">Visit Team</a></li>
-                    </ul>
-        
-                </div>
-        
-                <div class="col-sm-2">
-        
-                    <h5>Support</h5>
-        
-                    <ul>
-                        <li><a href="secondpages/Enquiry_page.html">Send Enquiry</a></li>
-                        <li><a href="secondpages/Contact Us page.html">Contact Us</a></li>
-                        <li><a href="#">Forums</a></li>
-                    </ul>
-        
-                </div>
-        
-                <div class="col-sm-3">
-        
-                    <div class="social-networks">
-        
-                        <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                        <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
-                    </div>
-        
-                    <button type="button" class="btn btn-default">Review Us</button>
-        
-                </div>
-        
-            </div>
-        </div>
-       
-        <div class="footer-copyright">
-       
-            <p>© 2018 Trekko.com All rights reserved </p>
-       
-        </div>
-    
-    </footer>
-  <!--   
-    
-    <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
-  <a href="index.html" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-  <div class="w3-xlarge w3-section">
-      <a href="https://www.facebook.com" title="fb page" target="_blank" class="w3-hover-text-green"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-  </div>
-</footer> -->
- 
-
-<script>
-
-
-//quotes_slide_show
-var slideIndex_quotes = 0;
-showSlides_quotes();
-showSlides_quotes();
-
-function showSlides_quotes() {
-    var i;
-    var slides_q = document.getElementsByClassName("mySlides_quotes");
-    for (i = 0; i < slides_q.length; i++) {
-        slides_q[i].style.display = "none"; 
-    }
-    slideIndex_quotes++;
-    if (slideIndex_quotes > slides_q.length)
-    {
-    slideIndex_quotes = 1
-    } 
-    slides_q[slideIndex_quotes-1].style.display = "block"; 
-    setTimeout(showSlides_quotes, 3000); // Change image every 2 seconds
-}
-
-
-
-
-// Used to toggle the menu on small screens when clicking on the menu button
-function toggleFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-    }
-}
-    
-    
-    
-    
-    //frontend
-        var slideIndex = 1;
-manual(slideIndex);
-
-function plusDivs(n) {
-    manual(slideIndex += n);
-}
-
-function manual(n) {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    if (n > x.length) {slideIndex = 1} 
-    if (n < 1) {slideIndex = x.length} ;
-    for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none"; 
-    }
-    x[slideIndex-1].style.display = "block"; 
-}
-    
-    
-    
-    
-    
-    var slideIndex = 0;
-automatic();
-
-function automatic() {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none"; 
-    }
-    slideIndex++;
-    if (slideIndex > x.length) {slideIndex = 1} 
-    x[slideIndex-1].style.display = "block"; 
-    setTimeout(automatic, 3000); 
-}
-</script>
-
-</body>
+	<head>
+		<title>Stellar Evolution</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload landing">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 id="logo"><a href="index.html">Stellar Evolution</a></h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="https://en.wikipedia.org/wiki/Stellar_evolution">Wikipedia</a></li>
+							<li>
+								<a href="Gallery/index2.html">Gallery</a>
+								
+							</li>
+							
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Banner -->
+				<section id="banner">
+					<div class="content">
+						<header>
+							<h2>Stellar Evolution at a glance</h2>
+							<p>If you wish to make an apple pie from scratch, you must first invent the universe</p>
+						</header>
+						<span class="image"><img src="images/pic01.jpg" alt="" /></span>
+					</div>
+					<a href="#one" class="goto-next scrolly">Next</a>
+				</section>
+
+			<!-- One -->
+				<section id="one" class="spotlight style1 bottom">
+					<span class="image fit main"><img src="images/pic02.jpg" alt="" /></span>
+					<div class="content">
+						<div class="container">
+							<div class="row">
+								<div class="col-4 col-12-medium">
+									<header>
+										
+										<p>Stellar evolution is the process by which a star changes over the course of time. Depending on the mass of the star, its lifetime can range from a few million years for the most massive to trillions of years for the least massive, which is considerably longer than the age of the universe. </p>
+									</header>
+								</div>
+								<div class="col-4 col-12-medium">
+									<p></p>
+								</div>
+								<div class="col-4 col-12-medium">
+									<p> All stars are born from collapsing clouds of gas and dust, often called nebulae or molecular clouds. <br>Over the course of millions of years, these protostars settle down into a state of equilibrium, becoming what is known as a main-sequence star.<br>Nuclear fusion powers a star for most of its life. 
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<a href="#two" class="goto-next scrolly">Next</a>
+				</section>
+
+			<!-- Two -->
+				<section id="two" class="spotlight style2 right">
+					<span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
+					<div class="content">
+						<header>
+							<h2>Protostar</h2>
+							<p>Stellar evolution starts with the gravitational collapse of a giant molecular cloud.</p>
+						</header>
+						<p> Typical giant molecular clouds are roughly 100 light-years (9.5×1014 km) across and contain up to 6,000,000 solar masses (1.2×1037 kg).As it collapses, a giant molecular cloud breaks into smaller and smaller pieces. In each of these fragments, the collapsing gas releases gravitational potential energy as heat. As its temperature and pressure increase, a fragment condenses into a rotating sphere of superhot gas known as a protostar.<br>A protostar continues to grow by accretion of gas and dust from the molecular cloud, becoming a pre-main-sequence star as it reaches its final mass.  </p>
+						<ul class="actions">
+							<li><a href="https://en.wikipedia.org/wiki/Protostar" class="button">Learn More</a></li>
+						</ul>
+					</div>
+					<a href="#three" class="goto-next scrolly">Next</a>
+				</section>
+
+			<!-- Three -->
+				<section id="three" class="spotlight style3 left">
+					<span class="image fit main bottom"><img src="images/pic04.jpg" alt="" /></span>
+					<div class="content">
+						<header>
+							<h2>Brown dwarfs and sub-stellar objects</h2>
+							<p>Protostar with Mass 0.08 M☉ never reach temprature high enough for fusion</p>
+						</header>
+						<p>Brown stars  fuse deuterium (2H) and to fuse lithium (7Li) if their mass is above a debated threshold of 13 MJ(Mass of Jupiter) and 65 MJ, respectively. It is also debated whether brown dwarfs would be better defined by their formation processes rather than by their supposed nuclear fusion reactions.
+							At a distance of about 6.5 light years, the nearest known brown dwarf is Luhman 16, a binary system of brown dwarfs discovered in 2013.
+						</p>
+						<ul class="actions">
+							<li><a href="https://en.wikipedia.org/wiki/Brown_dwarf" class="button">Learn More</a></li>
+						</ul>
+					</div>
+					<a href="#four" class="goto-next scrolly">Next</a>
+				</section>
+			<!-- Four -->
+
+			<section id="four" class="spotlight style2 right">
+					<span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
+					<div class="content">
+						<header>
+							<h2>Red dwarf</h2>
+							<p> IT is a relatively cool star with mass ranging from  0.075 to about 0.50 solar mass</p>
+						</header>
+						<p>Red dwarfs have surface temprature less than 4,000K.Red dwarfs are by far the most common type of star in the Milky Way.Because of their low luminosity, individual red dwarfs cannot be easily observed. Proxima Centauri, the nearest star to the Sun, is a red dwarf.Stellar models indicate that red dwarfs less than 0.35 M☉ are fully convective.[3] Hence the helium produced by the thermonuclear fusion of hydrogen is constantly remixed throughout the star, avoiding helium buildup at the core, thereby prolonging the period of fusion.
+						</p>
+						<ul class="actions">
+							<li><a href="https://en.wikipedia.org/wiki/Red_dwarf" class="button">Learn More</a></li>
+						</ul>
+					</div>
+					<a href="#five" class="goto-next scrolly">Next</a>
+				</section>
+
+			<!-- Five -->
+				<section id="five" class="spotlight style3 left">
+					<span class="image fit main bottom"><img src="images/pic04.jpg" alt="" /></span>
+					<div class="content">
+						<header>
+							<h2>White dwarf</h2>
+							<p> A white dwarf's faint luminosity comes from the emission of stored thermal energy.</p>
+						</header>
+						<p>;No fusion takes place in a white dwarf wherein mass is converted to energy.
+							White dwarfs are thought to be the final evolutionary state of stars whose mass is not high enough to become a neutron star. After the hydrogen-fusing period of a main-sequence star of low or medium mass ends, such a star will expand to a red giant during which it fuses helium to carbon and oxygen in its core by the triple-alpha process. If a red giant has insufficient mass to generate the core temperatures required to fuse carbon (around 1 billion K), an inert mass of carbon and oxygen will build up at its center. After such a star sheds its outer layers and forms a planetary nebula, it will leave behind a core, which is the remnant white dwarf.
+
+						</p>
+						<ul class="actions">
+							<li><a href="#" class="button">Learn More</a></li>
+						</ul>
+					</div>
+					<a href="#six" class="goto-next scrolly">Next</a>
+				</section>
+							<!-- Six -->
+
+					<section id="six" class="spotlight style2 right">
+					<span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
+					<div class="content">
+						<header>
+							<h2>Main sequence</h2>
+							<p>The duration of the main sequence depends on the mass of the star</p>
+						</header>
+						<p>For a more-massive protostar, the core temperature will eventually reach 10 million kelvin, initiating the proton–proton chain reaction and allowing hydrogen to fuse, first to deuterium and then to helium.In stars of slightly over 1 M☉ (2.0×1030 kg), the carbon–nitrogen–oxygen fusion reaction (CNO cycle) contributes a large portion of the energy generation. The onset of nuclear fusion leads relatively quickly to a hydrostatic equilibrium in which energy released by the core maintains a high gas pressure, balancing the weight of the star's matter and preventing further gravitational collapse. The star thus evolves rapidly to a stable state.</p>
+						<ul class="actions">
+							<li><a href="https://en.wikipedia.org/wiki/Main_sequence" class="button">Learn More</a></li>
+						</ul>
+					</div>
+					<a href="#seven" class="goto-next scrolly">Next</a>
+				</section>
+
+			<!-- seven -->
+				<section id="seven" class="spotlight style3 left">
+					<span class="image fit main bottom"><img src="images/pic04.jpg" alt="" /></span>
+					<div class="content">
+						<header>
+							<h2>Low Mass Star</h2>
+						<p>Dwarf of < 0.1 M☉ </p>							
+
+						</header>
+						<p>They stay in main sequence gradually increasing in temprature and luminosity.They slowly collapse into white dwarf after several hundred billion years.These stars wont become red giants as they are fully convective.</p>
+						<header>
+
+								<p>Dwarf of  0.1 M☉ to 0.8 M☉</p>							
+						</header>
+						<p>These stars do expand into red giants, but their helium cores are not massive enough to reach the temperatures required for helium fusion so they never reach the tip of the red giant branch. When hydrogen shell burning finishes, these stars move directly off the red giant branch like a post-asymptotic-giant-branch (AGB) star, but at lower luminosity, to become a white dwarf</p>
+						<ul class="actions">
+							<li><a href="#" class="button">Learn More</a></li>
+						</ul>
+					</div>
+					<a href="#eight" class="goto-next scrolly">Next</a>
+				</section>
+			
+					
+					<section id="eight" class="spotlight style2 right">
+					<span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
+					<div class="content">
+						<header>
+							<h2>Mid-Sized Star</h2>
+						<p> </p>							
+
+						</header>
+						<p>Stars of roughly 0.8–10 M☉ become red giants, which are large non-main-sequence stars of stellar classification K or M.Mid-sized stars are red giants during two different phases of their post-main-sequence evolution: red-giant-branch stars, with inert cores made of helium and hydrogen-burning shells, and asymptotic-giant-branch stars, with inert cores made of carbon and helium-burning shells inside the hydrogen-burning shells.[11] Between these two phases, stars spend a period on the horizontal branch with a helium-fusing core. Many of these helium-fusing stars cluster towards the cool end of the horizontal branch as K-type giants and are referred to as red clump giants. </p>
+						
+						
+					</div>
+					<a href="#nine" class="goto-next scrolly">Next</a>
+				</section>
+			
+				<section id="nine" class="spotlight style3 left">
+					<span class="image fit main bottom"><img src="images/pic04.jpg" alt="" /></span>
+					<div class="content">
+						<header>
+							<h2>Sub Gaint</h2>
+						<p></p>							
+
+						</header>
+						<p>When a star exhausts the hydrogen in its core, it leaves the main sequence and begins to fuse hydrogen in a shell outside the core. The core increases in mass as the shell produces more helium. Depending on the mass of the helium core, this continues for several million to one or two billion years, with the star expanding and cooling at a similar or slightly lower luminosity to its main sequence state. Eventually either the core becomes degenerate, in stars around the mass of the sun, or the outer layers cool sufficiently to become opaque, in more massive stars. Either of these changes cause the hydrogen shell to increase in temperature and the luminosity of the star to increase, at which point the star expands onto the red giant branch</p>
+						
+						<ul class="actions">
+							<li><a href="https://en.wikipedia.org/wiki/Subgiant" class="button">Learn More</a></li>
+						</ul>
+					</div>
+					<a href="#ten" class="goto-next scrolly">Next</a>
+				</section>
+
+					<section id="ten" class="spotlight style2 right">
+					<span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
+					<div class="content">
+						<header>
+							<h2>Red-giant-branch phase</h2>
+						<p> </p>							
+
+						</header>
+						<p>The expanding outer layers of the star are convective, with the material being mixed by turbulence from near the fusing regions up to the surface of the star.The helium core continues to grow on the red giant branch. It is no longer in thermal equilibrium, either degenerate or above the Schoenberg-Chandrasekhar limit, so it increases in temperature which causes the rate of fusion in the hydrogen shell to increase. The star increases in luminosity towards the tip of the red-giant branch. Red giant branch stars with a degenerate helium core all reach the tip with very similar core masses and very similar luminosities, although the more massive of the red giants become hot enough to ignite helium fusion before that point.  </p>
+						
+						<ul class="actions">
+							<li><a href="https://en.wikipedia.org/wiki/Red-giant_branch" class="button">Learn More</a></li>
+						</ul>
+					</div>
+					<a href="#11" class="goto-next scrolly">Next</a>
+				</section>
+			
+				<section id="11" class="spotlight style3 left">
+					<span class="image fit main bottom"><img src="images/pic04.jpg" alt="" /></span>
+					<div class="content">
+						<header>
+							<h2>Horizontal Branch</h2>
+						<p></p>							
+
+						</header>
+						<p>In the helium cores of stars in the 0.8 to 2.0 solar mass range(supported by electron degeneracy pressure). The energy is consumed by the thermal expansion of the initially degenerate core and thus cannot be seen from outside the star.Due to the expansion of the core, the hydrogen fusion in the overlying layers slows and total energy generation decreases. The star contracts, although not all the way to the main sequence, and it migrates to the horizontal branch.Core helium flash stars evolve to the red end of the horizontal branch but do not migrate to higher temperatures before they gain a degenerate carbon-oxygen core and start helium shell burning. Higher-mass stars with larger helium cores move along the horizontal branch to higher temperatures, some becoming unstable pulsating stars in the yellow instability strip (RR Lyrae variables).</p>
+						
+						<ul class="actions">
+							<li><a href="https://en.wikipedia.org/wiki/Subgiant" class="button">Learn More</a></li>
+						</ul>
+					</div>
+					<a href="#12" class="goto-next scrolly">Next</a>
+				</section>
+				
+				
+<section id="12" class="spotlight style3 right">
+					<span class="image fit main "><img src="images/pic04.jpg" alt="" /></span>
+					<div class="content">
+						<header>
+							<h2>Massive stars</h2>
+						<p></p>							
+
+						</header>
+						<p>In massive stars, the core is already large enough at the onset of the hydrogen burning shell that helium ignition will occur before electron degeneracy pressure has a chance to become prevalent. Thus, when these stars expand and cool, they do not brighten as much as lower-mass stars; however, they were much brighter than lower-mass stars to begin with, and are thus still brighter than the red giants formed from less-massive stars. These stars are unlikely to survive as red supergiants; instead they will destroy themselves as type II supernovas. </p>
+						
+					</div>
+					<a href="#13" class="goto-next scrolly">Next</a>
+				</section>
+
+								</section>
+			<section id="13" class="spotlight style3 left">
+					<span class="image fit main bottom"><img src="images/pic04.jpg" alt="" /></span>
+					<div class="content">
+						<header>
+						<p></p>							
+
+						</header>
+						<p>				Extremely massive stars (more than approximately 40 M☉), which are very luminous and thus have very rapid stellar winds, lose mass so rapidly due to radiation pressure that they tend to strip off their own envelopes before they can expand to become red supergiants, and thus retain extremely high surface temperatures (and blue-white color) from their main-sequence time onwards. The largest stars of the current generation are about 100-150 M☉ because the outer layers would be expelled by the extreme radiation. Although lower-mass stars normally do not burn off their outer layers so rapidly, they can likewise avoid becoming red giants or red supergiants if they are in binary systems close enough so that the companion star strips off the envelope as it expands, or if they rotate rapidly enough so that convection extends all the way from the core to the surface, resulting in the absence of a separate core and envelope due to thorough mixing. 
+						 </p>
+						
+					</div>
+					<a href="#14" class="goto-next scrolly">Next</a>
+				</section>
+								
+				<section id="14" class="spotlight style3 right">
+					<span class="image fit main "><img src="images/pic04.jpg" alt="" /></span>
+					<div class="content">
+						<header>
+						<p></p>							
+
+						</header>
+						<p>Above a certain mass (estimated at approximately 2.5 M☉ and whose star's progenitor was around 10 M☉), the core will reach the temperature (approximately 1.1 gigakelvins) at which neon partially breaks down to form oxygen and helium, the latter of which immediately fuses with some of the remaining neon to form magnesium; then oxygen fuses to form sulfur, silicon, and smaller amounts of other elements. Finally, the temperature gets high enough that any nucleus can be partially broken down, most commonly releasing an alpha particle (helium nucleus) which immediately fuses with another nucleus, so that several nuclei are effectively rearranged into a smaller number of heavier nuclei, with net release of energy because the addition of fragments to nuclei exceeds the energy required to break them off the parent nuclei.  </p>
+						
+					</div>
+					<a href="#15" class="goto-next scrolly">Next</a>
+				</section><section id="15" class="spotlight style3 left">
+					<span class="image fit main bottom"><img src="images/pic04.jpg" alt="" /></span>
+					<div class="content">
+						<header>
+							<h2>Supernova</h2>
+						</header>
+						<p>	Once the nucleosynthesis process arrives at iron-56, the continuation of this process consumes energy (the addition of fragments to nuclei releases less energy than required to break them off the parent nuclei). If the mass of the core exceeds the Chandrasekhar limit, electron degeneracy pressure will be unable to support its weight against the force of gravity, and the core will undergo sudden, catastrophic collapse to form a neutron star or (in the case of cores that exceed the Tolman-Oppenheimer-Volkoff limit), a black hole. <br>	The extremely energetic neutrinos fragment some nuclei; some of their energy is consumed in releasing nucleons, including neutrons, and some of their energy is transformed into heat and kinetic energy, thus augmenting the shock wave started by rebound of some of the infalling material from the collapse of the core. Electron capture in very dense parts of the infalling matter may produce additional neutrons. Because some of the rebounding matter is bombarded by the neutrons, some of its nuclei capture them, creating a spectrum of heavier-than-iron material including the radioactive elements.	
+						 </p>
+						 <ul class="actions">
+							<li><a href="https://en.wikipedia.org/wiki/Neutron_star" class="button">Learn More</a></li>
+						</ul>
+						
+					</div>
+					<a href="#16" class="goto-next scrolly">Next</a>
+				</section>
+				<section id="16" class="spotlight style3 right">
+					<span class="image fit main "><img src="images/pic04.jpg" alt="" /></span>
+					<div class="content">
+						<header>
+						
+						</header>
+						<p>
+							Both supernovae and ejection of elements from red giants are required to explain the observed abundance of heavy elements and isotopes thereof. The energy transferred from collapse of the core to rebounding material not only generates heavy elements, but provides for their acceleration well beyond escape velocity.<br>Neutrino oscillations may play an important role in the energy transfer problem as they not only affect the energy available in a particular flavour of neutrinos but also through other general-relativistic effects on neutrinos.The most massive stars that exist today may be completely destroyed by a supernova with an energy greatly exceeding its gravitational binding energy. This rare event, caused by pair-instability, leaves behind no black hole remnant.In the past history of the universe, some stars were even larger than the largest that exists today, and they would immediately collapse into a black hole at the end of their lives, due to photodisintegration. 
+						</p>
+						
+					</div>
+					<a href="#17" class="goto-next scrolly">Next</a>
+				</section>
+				<section id="#17" class="spotlight style3 left">
+					<span class="image fit main bottom"><img src="images/pic04.jpg" alt="" /></span>
+					<div class="content">
+						<header>
+							<h2>Neutron Star</h2>
+						</header>
+						<p>			When a stellar core collapses, the pressure causes electrons and protons to fuse by electron capture. Without electrons, which keep nuclei apart, the neutrons collapse into a dense ball (in some ways like a giant atomic nucleus), with a thin overlying layer of degenerate matter (chiefly iron unless matter of different composition is added later). These stars, known as neutron stars, are extremely small—on the order of radius 10 km, no bigger than the size of a large city—and are phenomenally dense. Their period of rotation shortens dramatically as the stars shrink.When these rapidly rotating stars' magnetic poles are aligned with the Earth, we detect a pulse of radiation each revolution. Such neutron stars are called pulsars.
+						 </p>
+						 <ul class="actions">
+							<li><a href="https://en.wikipedia.org/wiki/Neutron_star" class="button">Learn More</a></li>
+						</ul>
+						
+					</div>
+					<a href="#18" class="goto-next scrolly">Next</a>
+				</section>
+				<section id="18" class="spotlight style3 right">
+					<span class="image fit main "><img src="images/pic04.jpg" alt="" /></span>
+					<div class="content">
+						<header>
+							<h2>Black Holes</h2>
+						<p></p>							
+						If the mass of the stellar remnant is high enough, the neutron degeneracy pressure will be insufficient to prevent collapse below the Schwarzschild radius. The stellar remnant thus becomes a black hole. The mass at which this occurs is not known with certainty, but is currently estimated at between 2 and 3 M☉. Black holes are predicted by the theory of general relativity. According to classical general relativity, no matter or information can flow from the interior of a black hole to an outside observer, although quantum effects may allow deviations from this strict rule.Because the core-collapse mechanism of a supernova is, at present, only partially understood, it is still not known whether it is possible for a star to collapse directly to a black hole without producing a visible supernova, or whether some supernovae initially form unstable neutron stars which then collapse into black holes.
+						</header>
+						<p>p>
+						
+					</div>
+					<a href="#footer" class="goto-next scrolly">Next</a>
+				</section>
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://www.facebook.com/search/str/Soham%20Raje%20Patil/keywords_search" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="https://github.com/sohamraje137" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="mailto:sohampail798@gmail.com" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; ALL rights reserved by AAC</li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
